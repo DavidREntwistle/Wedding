@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">    
+    <script defer src="script.js"></script>
+    <title>Shaina & David's Wedding</title>
+</head>
+<body>
+
+    <div id="password-section" class="section">
+        <label for="password">Enter Password:</label>
+        <input type="text" id="password" placeholder="Password">
+        <div id="error-message" class="error-message"></div>
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+    
+    <div class="sidebar" id="sidebar" style="display: none;">
+        <button class="toggle-button" onclick="toggleSidebar()">
+            <span id="toggleText">></span>
+        </button>
+        <h1>Shaina & David's Wedding</h1>
+        <ul class="sidebar-list">
+            <li><a href="#home" onclick="scrollToSection('#home')">Home</a></li>
+            <li><a href="#couple" onclick="scrollToSection('#couple')">Couple</a></li>
+            <li><a href="#where" onclick="scrollToSection('#where')">Where</a></li>
+            <li><a href="#when" onclick="scrollToSection('#when')">When</a></li>
+            <li><a href="#rsvp" onclick="scrollToSection('#rsvp')">RSVP</a></li>
+        </ul>
+    </div>
+
+    <div id="home" class="section">
+        <!-- Home content goes here -->
+    </div>
+
+    <div id="couple" class="section">
+        <!-- Couple content goes here -->
+    </div>
+
+    <div id="where" class="section">
+        <!-- Where content goes here -->
+    </div>
+
+    <div id="when" class="section">
+        <!-- When content goes here -->
+    </div>
+
+    <div id="rsvp" class="section">
+        <!-- RSVP content goes here -->
+    </div>
+
+    <div class="overlay" id="overlay">
+    </div>
+
+</body>
+</html>
