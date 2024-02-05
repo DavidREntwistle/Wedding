@@ -1,3 +1,4 @@
+/* Reset some default styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -5,91 +6,81 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Sections styling */
 .section {
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     justify-content: center;
-    color: #333; /* Placeholder color, feel free to change */
+    color: #333;
+    flex-direction: column; /* Stack children vertically */
 }
 
-.sidebar {
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Add spacing between heading and content */
+    font-size: 2em;
+}
+
+/* Topbar styling */
+.topbar {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #333; /* Fixed color */
+    width: 100%;
+    z-index: 100;
+    background-color: #333;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 102; /* Above the password section */
-    display: flex;
-    flex-direction: column;
-    color: #fff; /* Text color */
-    overflow-x: hidden;
-    transition: width 0.5s;
-}
-
-.toggle-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-    color: #fff; /* Text color */
-    font-size: 24px; /* Font size for the < and > icons */
+    align-items: center;
+    color: #fff;
+    display: none; /* Hide topbar by default */
 }
 
-.sidebar-list {
+/* Copyright section styling */
+.copyright {
+    position: relative;
+    bottom: 0;
+    z-index: 100;
+    background-color: #333;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    display: none; /* Hide copyright by default */
+}
+
+/* Display topbar and copyright section after the correct password is entered */
+.password-entered .topbar,
+.password-entered .copyright {
+    display: flex;
+}
+
+/* Topbar list styling */
+.topbar-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
-.sidebar-list li {
-    margin-bottom: 10px;
+.topbar-list li {
+    margin-right: 20px;
 }
 
-.sidebar-list a {
+.topbar-list a {
     text-decoration: none;
-    color: #fff; /* Text color */
+    color: #fff;
     font-size: 18px;
     transition: color 0.3s;
 }
 
-.sidebar-list a:hover {
-    color: #F3D8C7; /* Hover color */
+.topbar-list a:hover {
+    color: #F3D8C7;
 }
 
-#toggleText {
-    margin-left: 10px;
-    transition: opacity 0.3s;
-}
-
-/* Add specific styling for each section as needed */
-#home {
-    background-color: #BFD3C1; /* Placeholder color */
-}
-
-#couple {
-    background-color: #F3D8C7; /* Placeholder color */
-}
-
-#where {
-    background-color: #C6C8E1; /* Placeholder color */
-}
-
-#when {
-    background-color: #F3D8C7; /* Placeholder color */
-}
-
-#rsvp {
-    background-color: #BFD3C1; /* Placeholder color */
-}
-
-/* Additional styles for password section */
+/* Password input styling */
 #password-section {
     position: fixed;
     top: 50%;
@@ -133,4 +124,25 @@ body {
 
 body.locked-scroll {
     overflow: hidden;
+}
+
+/* Additional styles for each section as needed */
+#home {
+    background-color: #BFD3C1; /* Placeholder color */
+}
+
+#couple {
+    background-color: #F3D8C7; /* Placeholder color */
+}
+
+#where {
+    background-color: #C6C8E1; /* Placeholder color */
+}
+
+#when {
+    background-color: #F3D8C7; /* Placeholder color */
+}
+
+#rsvp {
+    background-color: #BFD3C1; /* Placeholder color */
 }
