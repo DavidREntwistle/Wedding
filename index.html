@@ -3,23 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="password.css">
     <link rel="stylesheet" href="styles.css">    
     <title>Shaina & David's Wedding</title>
 </head>
 <body>
     <!-- Password section -->
     <div id="password-section" class="section">
-        <label for="password">Enter Password:</label>
-        <input type="text" id="password" placeholder="Password">
-        <div id="error-message" class="error-message"></div>
-        <button onclick="checkPassword()">Submit</button>
+        <div class="container">
+            <p style="text-align: center; font-size: 1.5em;">David & Shaina's Wedding</p>
+            <div class="password-input-container">
+                <input type="text" id="password" placeholder=" " style="width: 60%; box-sizing: border-box; padding: 10px; margin: 10px auto; display: block; text-align: center;">
+                <label for="password" id="password-label" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); pointer-events: none;">Enter Password</label>
+            </div>
+            <div id="error-message" class="error-message" style="text-align: center; color: #FF0000; margin-top: 10px;"></div>
+            <button onclick="checkPassword()" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #fff; border: 1px solid #333; border-radius: 5px; cursor: pointer; color: #333;">Submit</button>
+        </div>
+    </div>
+    
+    <!-- Topbar -->
+    <div class="topbar">
+        <ul class="topbar-list">
+            <li><a href="#home" onclick="scrollToSection('#home')">Home</a></li>
+            <li><a href="#couple" onclick="scrollToSection('#couple')">Couple</a></li>
+            <li><a href="#where" onclick="scrollToSection('#where')">Where</a></li>
+            <li><a href="#when" onclick="scrollToSection('#when')">When</a></li>
+            <li><a href="#rsvp" onclick="scrollToSection('#rsvp')">RSVP</a></li>
+        </ul>
     </div>
 
     <!-- Other sections -->
-
     <div id="home" class="section">
-        <h2>Home</h2>
-        <!-- Home content goes here -->
+        <!-- Countdown Timer Container -->
+        <div class="container">
+            <div id="timer"></div>
+            <h1>Shaina & David's Wedding! </h1>
+            <h2>Friday, 7th March, 2025</h2>
+        </div>
+        <!-- End Countdown Timer Container -->
     </div>
     
     <div id="couple" class="section">
@@ -42,28 +63,15 @@
         <!-- RSVP content goes here -->
     </div>
 
-    <!-- Topbar -->
-    <div class="topbar">
-        <h1>Shaina & David's Wedding</h1>
-        <ul class="topbar-list">
-            <li><a href="#home" onclick="scrollToSection('#home')">Home</a></li>
-            <li><a href="#couple" onclick="scrollToSection('#couple')">Couple</a></li>
-            <li><a href="#where" onclick="scrollToSection('#where')">Where</a></li>
-            <li><a href="#when" onclick="scrollToSection('#when')">When</a></li>
-            <li><a href="#rsvp" onclick="scrollToSection('#rsvp')">RSVP</a></li>
-        </ul>
-    </div>
-
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
     <!-- Copyright section -->
-    <div id="copyright" class="copyright">
+    <footer id="copyright" class="copyright">
         <p>&copy; 2024 Shaina & David's Wedding. All rights reserved.</p>
-    </div>
+    </footer>
 
-    <!-- Scripts and styles -->
+    <!-- Scripts -->
     <script defer src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">    
 </body>
 </html>

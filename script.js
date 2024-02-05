@@ -34,6 +34,20 @@ function checkPassword() {
     }
 }
 
+// Handle password placeholder behavior
+const passwordInput = document.getElementById('password');
+const passwordLabel = document.getElementById('password-label');
+
+passwordInput.addEventListener('focus', () => {
+    passwordLabel.style.display = 'none';
+});
+
+passwordInput.addEventListener('blur', () => {
+    if (passwordInput.value === '') {
+        passwordLabel.style.display = 'block';
+    }
+});
+
 // Function to toggle password visibility
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById('password');
@@ -73,3 +87,42 @@ function scrollToSection(sectionId) {
         menuItems.classList.remove('active');
     }
 }
+
+const year = new Date().getFullYear();
+const weddingDate = new Date(2025, 2, 7).getTime(); // Jan starts from 0
+
+// Countdown timer
+let timer = setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+    // Get today's date
+    const today = new Date().getTime();
+
+    // Calculate the difference
+    const diff = weddingDate - today;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    // Display the countdown
+    document.getElementById("timer").innerHTML =
+        `<div class="days">
+            <div class="numbers">${days}</div>days
+        </div>
+        <div class="hours">
+            <div class="numbers">${hours}</div>hours
+        </div>
+        <div class="minutes">
+            <div class="numbers">${minutes}</div>minutes
+        </div>
+        <div class="seconds">
+            <div class="numbers">${seconds}</div>seconds
+        </div>`;
+}
+
+// Uncomment the next line if you want to stop the countdown after the wedding date
+// clearInterval(timer);
+
