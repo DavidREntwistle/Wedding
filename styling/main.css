@@ -1,0 +1,83 @@
+/* main.css */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
+
+body {
+    font-family: 'Garamond', serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    display: grid;
+    background: #183059;
+}
+
+.container {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 650px;
+    height: 480px;
+}
+
+h1,
+h2 {
+    font-family: 'Garamond', serif;
+    text-align: center;
+    margin-top: 2em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #b1b1b1;
+}
+
+h1 {
+    font-size: 2em;
+}
+  
+h2 {
+    font-size: 1em;
+    margin-top: 0;
+}
+
+/* General section styling */
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Keyframe animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Additional styles for each section as needed */
+#home {
+    background-color: #fff;
+    /*background: url('path/to/your/image.jpg') center/cover no-repeat;
+    */
+}
+
+#couple {
+    background-color: #fff;
+}
+
+#where {
+    background-color: #fff;
+}
+
+#when {
+    background-color: #fff;
+}
+
+#rsvp {
+    background-color: #fff;
+}

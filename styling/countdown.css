@@ -1,0 +1,47 @@
+/* countdown.css */
+#timer {
+    color: #F6F4F3;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Garamond', serif;
+    font-size: 0.7em;
+    letter-spacing: 5px;
+    margin-top: 25%;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+    display: inline-block;
+    padding: 20px;
+    width: 100px;
+    border-radius: 5px;
+    background: #BFD3C1;
+}
+
+.numbers {
+    font-family: 'Garamond', serif;
+    color: #fff;
+    font-size: 5em;
+}
+
+.white {
+    position: absolute;
+    background: #fff;
+    height: 85px;
+    width: 75px;
+    left: 30%;
+    top: 2%;
+}
+
+.message {
+    color: #b1b1b1;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Garamond', serif;
+    font-size: 5em;
+    padding: 10px;
+    letter-spacing: 5px;
+    margin-top: 25%;
+}

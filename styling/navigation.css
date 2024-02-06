@@ -1,0 +1,65 @@
+/* navigation.css */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+    padding: 10px 20px; /* Reduce padding to make it smaller vertically */
+    height: 50px; /* Set the height to your desired value */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    justify-content: space-evenly;
+    align-items: center;
+    color: #333;
+    transition: background-color 0.3s ease; /* Transition for smooth effect */
+    display: none; /* Hide the navigation bar initially */
+}
+
+.nav-bar.translucent {
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust the opacity as needed */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly; /* Equally space the items */
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the navigation links horizontally */
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #F3D8C7;
+}
+
+/* Copyright section styling */
+.copyright {
+    position: relative;
+    bottom: 0;
+    z-index: 100;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    justify-content: center; /* Center the text horizontally */
+    align-items: center;
+    color: #333;
+    display: none;
+}
+
+/* Display topbar and copyright section after the correct password is entered */
+.password-entered .nav-bar,
+.password-entered .copyright {
+    display: flex;
+}

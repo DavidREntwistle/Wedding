@@ -1,0 +1,77 @@
+Countdown Displayed:
+
+Exactly 1 year before the wedding.
+Expected message: Countdown displayed
+Message displayed: Countdown displayed: 365 days, 0 hours, 0 minutes, 0 seconds
+Test Result: Passed
+
+Exactly 1 week before the wedding.
+Expected message: Countdown displayed
+Message displayed: Countdown displayed: 7 days, 0 hours, 0 minutes, 0 seconds
+Test Result: Passed
+
+Exactly 1 day before the wedding.
+Expected message: Countdown displayed
+Message displayed: Countdown displayed: 1 days, 0 hours, 0 minutes, 0 seconds
+Test Result: Passed
+
+Today is the day! Countdown Displayed:
+
+Exactly 23 hours, 59 minutes, and 59 seconds before the wedding.
+Expected message: Today is the day! Countdown displayed
+Message displayed: Today is the day! Countdown displayed: 0 days, 23 hours, 59 minutes, 59 seconds
+Test Result: Passed
+
+Exactly 1 hour before the wedding.
+Expected message: Today is the day! Countdown displayed
+Message displayed: Today is the day! Countdown displayed: 0 days, 1 hours, 0 minutes, 0 seconds
+Test Result: Passed
+
+Exactly 1 minute before the wedding.
+Expected message: Today is the day! Countdown displayed
+Message displayed: Today is the day! Countdown displayed: 0 days, 0 hours, 1 minutes, 0 seconds
+Test Result: Passed
+
+Just Married!:
+
+Exactly at the wedding time.
+Expected message: Just Married!
+Message displayed: Just Married!
+Test Result: Passed
+
+Exactly 1 minute after the wedding.
+Expected message: Just Married!
+Message displayed: Just Married!
+Test Result: Passed
+
+One day after the wedding.
+Expected message: Just Married!
+Message displayed: Just Married!
+Test Result: Passed
+
+Two days after the wedding.
+Expected message: Just Married!
+Message displayed: Just Married!
+Test Result: Passed
+
+Countdown Displayed - Different Time Zones:
+
+Wedding date in Texas time zone, countdown displayed.
+Expected message: Countdown displayed
+Message displayed: Countdown displayed: 1 days, 0 hours, 0 minutes, 0 seconds
+Test Result: Passed
+
+Wedding date in Vancouver time zone, countdown displayed.
+Expected message: Countdown displayed
+Message displayed: Countdown displayed: 1 days, 2 hours, 0 minutes, 0 seconds
+Test Result: Passed
+
+Wedding date in Texas time zone, one hour before, countdown displayed.
+Expected message: Today is the day! Countdown displayed
+Message displayed: Today is the day! Countdown displayed: 0 days, 19 hours, 0 minutes, 0 seconds
+Test Result: Passed
+
+Wedding date in Vancouver time zone, one hour before, countdown displayed.
+Expected message: Today is the day! Countdown displayed
+Message displayed: Today is the day! Countdown displayed: 0 days, 17 hours, 0 minutes, 0 seconds
+Test Result: Passed
