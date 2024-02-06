@@ -63,3 +63,24 @@
 .password-entered .copyright {
     display: flex;
 }
+
+/* Style for the scroll to top button */
+.scrollToTopBtn {
+    display: none; /* Hide the button by default */
+    position: fixed; /* Fixed position to keep it always visible */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    align-items: center;
+    z-index: 99; /* Ensure it appears above other content */
+    background-color: #ffffff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding */
+    font-size: 16px; /* Button text size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.scrollToTopBtn:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}

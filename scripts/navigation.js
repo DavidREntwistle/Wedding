@@ -37,3 +37,8 @@ function scrollToSection(sectionId) {
         menuItems.classList.remove('active');
     }
 }
+
+// Scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+}
