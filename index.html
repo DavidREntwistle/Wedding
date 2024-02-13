@@ -10,13 +10,13 @@
     <!-- Password section -->
     <div id="password-section" class="section">
         <div class="container">
-            <p style="text-align: center; font-size: 1.5em;">Shaina & David's<br>Wedding!</p>
+            <p class="password-title">Shaina & David's<br>Wedding!</p>
             <div class="password-input-container">
-                <input type="text" id="password" placeholder=" " style="width: 60%; box-sizing: border-box; padding: 10px; margin: 10px auto; display: block; text-align: center;">
-                <label for="password" id="password-label" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); pointer-events: none;">Enter invite code</label>
+                <input type="text" id="password" placeholder=" " class="password-input">
+                <label for="password" id="password-label">Enter invite code</label>
             </div>
-            <div id="error-message" class="error-message" style="text-align: center; color: #FF0000; margin-top: 10px;"></div>
-            <button onclick="checkPassword()" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #fff; border: 1px solid #333; border-radius: 5px; cursor: pointer; color: #333;">Welcome</button>
+            <div id="error-message" class="error-message">&nbsp;</div>
+            <button onclick="checkPassword()" id="submit-button">Welcome</button>
         </div>
     </div>
     

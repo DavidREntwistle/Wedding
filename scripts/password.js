@@ -10,7 +10,6 @@ const errorMessage = document.getElementById('error-message');
 // Function to check the password
 function checkPassword() {
     const passwordSection = document.getElementById('password-section'); // Define passwordSection here
-
     const enteredPassword = passwordInput.value;
 
     if (enteredPassword === password) {
@@ -30,7 +29,13 @@ function checkPassword() {
     }
 }
 
-// Handle password placeholder behavior
+// Event listeners
+passwordInput.addEventListener('keydown', function(e) {
+    if (e.keyCode == 13) {
+        checkPassword();
+    }
+});
+
 passwordInput.addEventListener('focus', () => {
     passwordLabel.style.display = 'none';
 });
