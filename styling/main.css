@@ -16,13 +16,46 @@ body {
     overflow: hidden;
     width: 650px;
     height: 480px;
+    text-align: center;
+}
+  
+.header-section {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px; /* Set the height of the image container */
+    width: auto;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.image img {
+    max-width: 100%; /* Limit the maximum width of the image */
+    max-height: 100%; /* Limit the maximum height of the image */
+    border-radius: 10px; /* Add rounded corners */
 }
 
 h1,
 h2 {
     font-family: 'Garamond', serif;
     text-align: center;
-    margin-top: 2em;
     text-transform: uppercase;
     letter-spacing: 5px;
     color: #b1b1b1;
@@ -34,7 +67,6 @@ h1 {
   
 h2 {
     font-size: 1em;
-    margin-top: 0;
 }
 
 /* General section styling */
@@ -44,13 +76,6 @@ h2 {
     align-items: center;
     justify-content: center;
     color: #333;
-}
-
-.section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
-    animation: fadeIn 1s ease-in-out;
 }
 
 /* Keyframe animation */

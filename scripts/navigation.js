@@ -42,3 +42,17 @@ function scrollToSection(sectionId) {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
 }
+
+window.onscroll = function() {stickyNavBar()};
+
+var navBar = document.getElementById("nav-bar");
+var header = document.getElementById("header");
+var headerBottom = header.offsetTop + header.offsetHeight;
+
+function stickyNavBar() {
+  if (window.pageYOffset > headerBottom) {
+    navBar.classList.add("sticky");
+  } else {
+    navBar.classList.remove("sticky");
+  }
+}

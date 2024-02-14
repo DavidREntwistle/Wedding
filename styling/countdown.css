@@ -1,4 +1,6 @@
 /* countdown.css */
+
+/* Countdown timer */
 #timer {
     color: #F6F4F3;
     text-align: center;
@@ -6,7 +8,8 @@
     font-family: 'Garamond', serif;
     font-size: 0.7em;
     letter-spacing: 5px;
-    margin-top: 25%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .days,
@@ -14,9 +17,9 @@
 .minutes,
 .seconds {
     display: inline-block;
-    padding: 20px;
+    padding: 5px;
     width: 100px;
-    border-radius: 5px;
+    border-radius: 10px;
     background: #BFD3C1;
 }
 
