@@ -1,18 +1,37 @@
 // loadContent.js
-// Load text content from a file and display it in the specified section
 
-async function loadContent(sectionId, filePath) {
-    try {
-        const response = await fetch(filePath);
-        const text = await response.text();
-        document.getElementById(sectionId).innerText = text;
-    } catch (error) {
-        console.error('Error loading content:', error);
+// Function to fetch and process JSON data
+async function loadContent() {
+    const sections = ['home', 'couple', 'where', 'when', 'rsvp'];
+
+    // Iterate over each section
+    for (const section of sections) {
+        try {
+            const response = await fetch(`assets/content/${section}.json`);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${section} content`);
+            }
+            const data = await response.json();
+            populateSection(data, section);
+        } catch (error) {
+            console.error(`Error loading ${section} content:`, error);
+        }
     }
 }
 
-loadContent('home-content', 'assets/content/home.txt');
-loadContent('couple-content', 'assets/content/couple.txt');
-loadContent('where-content', 'assets/content/where.txt');
-loadContent('when-content', 'assets/content/when.txt');
-loadContent('rsvp-content', 'assets/content/rsvp.txt');
+// Function to populate section content
+function populateSection(data, section) {
+    const titleElement = document.getElementById(`${section}-title`);
+    const contentElement = document.getElementById(`${section}-content`);
+    const imageElement = document.getElementById(`${section}-image`);
+
+    if (titleElement && contentElement && imageElement && data) {
+        titleElement.textContent = data.title || '';
+        contentElement.innerHTML = data.content ? data.content.map(line => `<p>${line}</p>`).join('') : '';
+        imageElement.src = data.image || '';
+        imageElement.alt = data.title || '';
+    }
+}
+
+// Call the function to load content
+loadContent();
