@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
     loadScript("scripts/password.js");
     loadScript("scripts/navigation.js");
     loadScript("scripts/countdown.js");
+    loadScript("scripts/loadContent.js");
 
-    // Function to load script dynamically
-    function loadScript(url) {
-        var script = document.createElement("script");
-        script.src = url;
-        script.defer = true;
-        document.body.appendChild(script);
-    }
+// Function to load script dynamically
+function loadScript(url) {
+    const script = document.createElement("script");
+    script.src = url;
+    script.defer = true;
+    document.body.appendChild(script);
+}
 });
