@@ -21,7 +21,7 @@ body {
     height: 480px;
     text-align: center;
 }
-  
+
 .header-section {
     position: relative;
     text-align: center;
@@ -67,7 +67,7 @@ h2 {
 h1 {
     font-size: 2em;
 }
-  
+
 h2 {
     font-size: 1em;
 }
@@ -90,8 +90,6 @@ h2 {
 /* Additional styles for each section as needed */
 #home {
     background-color: #fff;
-    /*background: url('path/to/your/image.jpg') center/cover no-repeat;
-    */
 }
 
 #couple {
@@ -108,4 +106,27 @@ h2 {
 
 #rsvp {
     background-color: #fff;
+}
+
+/* Media queries for responsive design */
+
+/* Media query for small screens */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%; /* Full width for small screens */
+    }
+}
+
+/* Media query for medium screens */
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .container {
+        width: 80%; /* Adjust width for medium screens */
+    }
+}
+
+/* Media query for large screens */
+@media only screen and (min-width: 1201px) {
+    .container {
+        width: 650px; /* Reset width for large screens */
+    }
 }

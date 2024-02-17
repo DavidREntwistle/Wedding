@@ -5,7 +5,7 @@
     position: relative; /* Relative position to keep the navigation bar in place */
     top: 0; /* Position at the top of the viewport */
     left: 0; /* Position at the left of the viewport */
-    width: auto; /* Auto width of the viewport initally */
+    width: auto; /* Auto width of the viewport initially */
     z-index: 1000; /* Ensure the navigation bar appears above other content */
     background-color: #fff; /* Background color of the navigation bar */
     padding: 10px 20px; /* Reduce padding to make it smaller vertically */
@@ -30,6 +30,12 @@
     background-color: rgba(255, 255, 255, 0.9); /* Adjust the opacity for a translucent effect */
 }
 
+/* Display the navigation bar after the correct password is entered */
+.password-entered .nav-bar {
+    display: flex; /* Display the navigation bar */
+}
+
+/* Other responsive changes */
 /* Styling for the navigation links */
 .nav-links {
     list-style: none; /* Remove default bullet points */
@@ -37,7 +43,6 @@
     margin: 0; /* Remove default margin */
     display: flex; /* Display links in a row */
     justify-content: space-evenly; /* Equally space the items horizontally */
-    width: 80%; /* Set the width of the navigation links */
     margin: 0 auto; /* Center the navigation links horizontally */
 }
 
@@ -99,5 +104,29 @@
 }
 
 #scrollToTopBtn:hover {
-    background-color: #9e9e9e;; /* Darker background color on hover */
+    background-color: #9e9e9e; /* Darker background color on hover */
+}
+
+/* Media queries for responsive design */
+
+/* Media query for small screens */
+@media only screen and (max-width: 600px) {
+    .nav-links {
+        flex-direction: column; /* Change to a column layout for small screens */
+        align-items: center; /* Center items horizontally for small screens */
+    }
+}
+
+/* Media query for medium screens */
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .nav-links {
+        width: 60%; /* Reset width for medium screens */
+    }
+}
+
+/* Media query for large screens */
+@media only screen and (min-width: 1201px) {
+    .nav-links {
+        width: 80%; /* Reset width for large screens */
+    }
 }
