@@ -89,23 +89,23 @@ h2 {
 
 /* Additional styles for each section as needed */
 #home {
-    background-color: #fff;
+    background-color: lightgray;
 }
 
 #couple {
-    background-color: #fff;
+    background-color: white;
 }
 
 #where {
-    background-color: #fff;
+    background-color: lightgray;
 }
 
 #when {
-    background-color: #fff;
+    background-color: white;
 }
 
 #rsvp {
-    background-color: #fff;
+    background-color: lightgray;
 }
 
 /* Media queries for responsive design */

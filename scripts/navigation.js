@@ -15,6 +15,35 @@ window.addEventListener('scroll', toggleTranslucent);
 navigation.addEventListener('mouseenter', restoreAppearance);
 navigation.addEventListener('mouseleave', toggleTranslucent);
 
+// Add event listener for burger menu
+document.querySelector('.burger-menu').addEventListener('click', function () {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+
+// Toggle burger menu visibility
+const burgerMenu = document.querySelector('.burger-menu');
+const navLinks = document.querySelector('.nav-links');
+
+burgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Smooth scroll for burger menu links
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const sectionId = this.getAttribute('href');
+        document.querySelector(sectionId).scrollIntoView({
+            behavior: 'smooth'
+        });
+
+        // Hide the burger menu after clicking on a link
+        navLinks.classList.remove('active');
+    });
+});
+
 function toggleTranslucent() {
     navigation.classList.toggle('translucent', window.scrollY > 0);
 }

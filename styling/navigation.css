@@ -61,6 +61,22 @@
     color: #F3D8C7; /* Text color on hover */
 }
 
+/* Display the navigation links when active */
+.nav-links.active {
+    display: flex; /* Display the navigation links */
+    flex-direction: column; /* Display links in a column */
+    position: fixed; /* Position the navigation links fixed on the screen */
+    top: 0; /* Position at the top of the screen */
+    left: 0; /* Position at the left of the screen */
+    width: 100%; /* Full width of the screen */
+    height: 100%; /* Full height of the screen */
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background color */
+    z-index: 1000; /* Ensure the navigation links appear above other content */
+    padding-top: 50px; /* Adjust padding to account for the burger menu */
+    transition: opacity 0.4s ease; /* Smooth transition for animation */
+    opacity: 1; /* Make the navigation links fully visible */
+}
+
 /* Styling for the copyright section */
 .copyright {
     position: relative; /* Relative positioning */
@@ -107,13 +123,41 @@
     background-color: #9e9e9e; /* Darker background color on hover */
 }
 
+.burger-menu {
+    display: none; /* Hide the burger menu by default */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: transform 0.4s ease; /* Smooth transition for animation */
+}
+
 /* Media queries for responsive design */
 
 /* Media query for small screens */
 @media only screen and (max-width: 600px) {
     .nav-links {
-        flex-direction: column; /* Change to a column layout for small screens */
-        align-items: center; /* Center items horizontally for small screens */
+        display: none; /* Hide the navigation links for small screens */
+        flex-direction: column; /* Arrange links vertically */
+        text-align: center; /* Center-align links */
+        position: absolute; /* Position the links */
+        top: 50px; /* Offset from the top */
+        left: 0; /* Align to the left */
+        width: 100%; /* Occupy full width */
+        background-color: #fff; /* Background color of the burger menu */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow */
+    }
+
+    .nav-links.active {
+        display: flex; /* Display links when active */
+    }
+
+    .burger-menu {
+        display: block; /* Display burger menu icon */
     }
 }
 
