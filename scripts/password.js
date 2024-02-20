@@ -4,7 +4,7 @@ const password = "test";
 const passwordInput = document.getElementById('password');
 const passwordLabel = document.getElementById('password-label');
 const navigation = document.getElementById('nav-bar');
-const overlay = document.getElementById('overlay');
+const overlay = document.getElementById('password-overlay');
 const errorMessage = document.getElementById('error-message');
 
 // Function to check the password

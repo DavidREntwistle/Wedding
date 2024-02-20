@@ -61,22 +61,6 @@
     color: #F3D8C7; /* Text color on hover */
 }
 
-/* Display the navigation links when active */
-.nav-links.active {
-    display: flex; /* Display the navigation links */
-    flex-direction: column; /* Display links in a column */
-    position: fixed; /* Position the navigation links fixed on the screen */
-    top: 0; /* Position at the top of the screen */
-    left: 0; /* Position at the left of the screen */
-    width: 100%; /* Full width of the screen */
-    height: 100%; /* Full height of the screen */
-    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background color */
-    z-index: 1000; /* Ensure the navigation links appear above other content */
-    padding-top: 50px; /* Adjust padding to account for the burger menu */
-    transition: opacity 0.4s ease; /* Smooth transition for animation */
-    opacity: 1; /* Make the navigation links fully visible */
-}
-
 /* Styling for the copyright section */
 .copyright {
     position: relative; /* Relative positioning */
@@ -123,37 +107,100 @@
     background-color: #9e9e9e; /* Darker background color on hover */
 }
 
+/* Styling for the burger menu container */
 .burger-menu {
     display: none; /* Hide the burger menu by default */
     cursor: pointer; /* Change cursor to pointer */
 }
 
-.burger-menu div {
+/* Styling for the burger icon */
+.burger-icon, .close-icon {
     width: 25px;
     height: 3px;
     background-color: #333;
-    margin: 5px;
+    cursor: pointer; /* Change cursor to pointer */
     transition: transform 0.4s ease; /* Smooth transition for animation */
 }
 
-/* Media queries for responsive design */
+/* Styling for the close icon */
+.close-icon {
+    transform: rotate(45deg); /* Rotate to form X */
+}
 
+/* Lines for the close icon */
+.close-icon::before,
+.close-icon::after {
+    content: ''; /* Empty content */
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    transition: transform 0.4s ease; /* Smooth transition for animation */
+}
+
+/* Rotate and position lines for X shape */
+.close-icon::before {
+    top: -8px;
+    transform: rotate(-90deg);
+}
+
+.close-icon::after {
+    top: 8px;
+    transform: rotate(90deg);
+}
+
+/* Hide lines of close icon initially */
+.close-icon.hide-close::before,
+.close-icon.hide-close::after {
+    display: none;
+}
+
+/* Display the navigation links when active */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Change to transparent */
+    z-index: 1000;
+    padding-top: 50px;
+    transition: opacity 0.4s ease;
+    opacity: 1;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* White overlay with opacity */
+    z-index: 999; /* Ensure the overlay appears above other content */
+    display: none; /* Initially hidden */
+}
+
+/* Media queries for responsive design */
 /* Media query for small screens */
 @media only screen and (max-width: 600px) {
     .nav-links {
-        display: none; /* Hide the navigation links for small screens */
-        flex-direction: column; /* Arrange links vertically */
-        text-align: center; /* Center-align links */
-        position: absolute; /* Position the links */
-        top: 50px; /* Offset from the top */
-        left: 0; /* Align to the left */
-        width: 100%; /* Occupy full width */
-        background-color: #fff; /* Background color of the burger menu */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow */
+        /* Existing styles */
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        opacity: 0; /* Initially hide the navigation links */
+        pointer-events: none; /* Disable pointer events to prevent interaction */
+        z-index: 99; /* Ensure the links appear above other content */
     }
 
     .nav-links.active {
-        display: flex; /* Display links when active */
+        opacity: 1; /* Make the navigation links visible when active */
+        pointer-events: auto; /* Enable pointer events */
     }
 
     .burger-menu {
