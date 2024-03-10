@@ -38,7 +38,7 @@ body {
     justify-content: center;
 }
 
-.image {
+.header-image {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +49,7 @@ body {
     flex-wrap: nowrap;
 }
 
-.image img {
+.header-image img {
     max-width: 100%; /* Limit the maximum width of the image */
     max-height: 100%; /* Limit the maximum height of the image */
     border-radius: 10px; /* Add rounded corners */
@@ -74,11 +74,26 @@ h2 {
 
 /* General section styling */
 .section {
-    height: 100vh;
+    height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+
+.section-title {
+    margin-bottom: 10px;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    align-content: center;
     justify-content: center;
-    color: #333;
 }
 
 /* Keyframe animation */
@@ -87,25 +102,64 @@ h2 {
     to { opacity: 1; }
 }
 
-/* Additional styles for each section as needed */
-#home {
-    background-color: lightgray;
-}
-
-#couple {
-    background-color: white;
-}
-
-#where {
-    background-color: lightgray;
-}
-
-#when {
-    background-color: white;
-}
-
+/* Section styling */
+#home,
+#schedule,
+#travel,
+#accomodation,
+#ceremony,
+#venue,
+#thingstodo,
+#faqs,
 #rsvp {
-    background-color: lightgray;
+    background-color: white;
+}
+
+
+#home-title,
+#schedule-title,
+#travel-title,
+#accomodation-title,
+#ceremony-title,
+#venue-title,
+#thingstodo-title,
+#faqs-title,
+#rsvp-title {
+    margin-bottom: 10px;
+}
+
+#home-content,
+#schedule-content,
+#travel-content,
+#accomodation-content,
+#ceremony-content,
+#venue-content,
+#thingstodo-content,
+#faqs-content,
+#rsvp-content {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+#home-image,
+#schedule-image,
+#travel-image,
+#accomodation-image,
+#ceremony-image,
+#venue-image,
+#thingstodo-image,
+#faqs-image,
+#rsvp-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Set the height of the image container */
+    width: auto;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 /* Media queries for responsive design */

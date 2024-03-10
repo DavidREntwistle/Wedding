@@ -1,7 +1,6 @@
 {
-    "title": "RSVP",
+    "title": "Schedule",
     "content": [
-      "Please RSVP by the specified date so we can make the necessary arrangements. We look forward to celebrating with you!",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "Sed aliquam tortor nec quam tempor, nec malesuada lacus ullamcorper.",
       "Vivamus nec massa sit amet est convallis facilisis vitae nec justo.",
@@ -11,3 +10,4 @@
     ],
     "image": "assets/images/test.jpg"
 }
+  
