@@ -1,5 +1,15 @@
 /* navigation.css */
 
+/* Customizing SimpleBar Scrollbar */
+.simplebar-horizontal .simplebar-scrollbar:before {
+    background-color: #BFD3C1;
+}
+
+/* Adjust scrollbar width */
+.simplebar-vertical.simplebar-track {
+    width: 30px;
+}
+
 /* Styling for the navigation bar */
 .nav-bar {
     position: relative; /* Relative position to keep the navigation bar in place */

@@ -73,21 +73,30 @@ window.addEventListener('scroll', toggleTranslucent);
 document.getElementById('nav-bar').addEventListener('mouseenter', restoreAppearance);
 document.getElementById('nav-bar').addEventListener('mouseleave', toggleTranslucent);
 
-// Function to handle sticky navigation bar
+// Function to handle sticky navigation bar adjusted for SimpleBar
 function stickyNavBar() {
     const navBar = document.getElementById("nav-bar");
     const header = document.getElementById("header");
-    const headerBottom = header.offsetTop + header.offsetHeight;
 
-    navBar.classList.toggle("sticky", window.pageYOffset > headerBottom);
+    // Assuming SimpleBar is applied on an element with the ID 'main-content'
+    var simpleBarContainer = document.querySelector('#main-content .simplebar-content-wrapper');
+    if (simpleBarContainer) {
+        const headerBottom = header.offsetTop + header.offsetHeight;
+        const scrollTop = simpleBarContainer.scrollTop; // Get the scroll position of the SimpleBar container
+
+        navBar.classList.toggle("sticky", scrollTop > headerBottom);
+    }
 }
 
-// Add event listener for scroll
-window.addEventListener('scroll', stickyNavBar);
+// Adjusting the event listener to work with SimpleBar
+document.querySelector('#main-content .simplebar-content-wrapper').addEventListener('scroll', stickyNavBar);
 
 // Function to scroll to top of the page
 function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    var simpleBarContainer = document.querySelector('#main-content .simplebar-content-wrapper');
+    if (simpleBarContainer) {
+        simpleBarContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
 // Add event listener for scroll to top button

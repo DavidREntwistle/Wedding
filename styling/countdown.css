@@ -77,12 +77,5 @@
 
 /* Media query for large screens */
 @media only screen and (min-width: 1201px) {
-    .white {
-        left: 30%; /* Adjust position for large screens */
-        width: 75px; /* Reset width for large screens */
-    }
-
-    .message {
-        font-size: 5em; /* Reset font size for large screens */
-    }
+    /* No changes needed for large screens */
 }

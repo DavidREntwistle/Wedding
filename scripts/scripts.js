@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadScript("scripts/navigation.js");
     loadScript("scripts/countdown.js");
     loadScript("scripts/loadContent.js");
+    loadScript("https://cdn.jsdelivr.net/npm/simplebar/dist/simplebar.min.js");
 
 // Function to load script dynamically
 function loadScript(url) {

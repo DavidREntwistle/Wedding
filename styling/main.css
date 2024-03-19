@@ -1,6 +1,18 @@
 /* main.css */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
+/* Simplebar */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#main-content {
+    height: 100vh; /* 100% of the viewport height */
+    overflow: auto; /* Ensure content can scroll */
+}
+
+/* Body */
 body {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
@@ -13,6 +25,7 @@ body {
     background: #fff;
 }
 
+/* Container */
 .container {
     position: relative;
     margin: auto;
@@ -22,6 +35,7 @@ body {
     text-align: center;
 }
 
+/* Header Section */
 .header-section {
     position: relative;
     text-align: center;
@@ -42,7 +56,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 250px; /* Set the height of the image container */
+    height: 250px;
     width: auto;
     align-content: center;
     flex-direction: column;
@@ -50,11 +64,12 @@ body {
 }
 
 .header-image img {
-    max-width: 100%; /* Limit the maximum width of the image */
-    max-height: 100%; /* Limit the maximum height of the image */
-    border-radius: 10px; /* Add rounded corners */
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
 }
 
+/* Headings */
 h1,
 h2 {
     font-family: 'Garamond', serif;
@@ -72,7 +87,7 @@ h2 {
     font-size: 1em;
 }
 
-/* General section styling */
+/* General Section Styling */
 .section {
     height: auto;
     display: flex;
@@ -96,47 +111,22 @@ h2 {
     justify-content: center;
 }
 
-/* Keyframe animation */
+/* Keyframe Animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Section styling */
-#home,
-#schedule,
-#travel,
-#accommodation,
-#ceremony,
-#venue,
-#thingstodo,
-#faqs,
-#rsvp {
+/* Sections Styling */
+.section[id] {
     background-color: white;
 }
 
-
-#home-title,
-#schedule-title,
-#travel-title,
-#accommodation-title,
-#ceremony-title,
-#venue-title,
-#thingstodo-title,
-#faqs-title,
-#rsvp-title {
+.section-title[id] {
     margin-bottom: 10px;
 }
 
-#home-content,
-#schedule-content,
-#travel-content,
-#accommodation-content,
-#ceremony-content,
-#venue-content,
-#thingstodo-content,
-#faqs-content,
-#rsvp-content {
+.section-content[id] {
     font-size: 1em;
     color: #333;
     margin-bottom: 20px;
@@ -155,32 +145,32 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px; /* Set the height of the image container */
+    height: 300px;
     width: auto;
     align-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
 }
 
-/* Media queries for responsive design */
+/* Media Queries for Responsive Design */
 
-/* Media query for small screens */
+/* Small Screens */
 @media only screen and (max-width: 600px) {
     .container {
-        width: 100%; /* Full width for small screens */
+        width: 100%;
     }
 }
 
-/* Media query for medium screens */
+/* Medium Screens */
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
     .container {
-        width: 80%; /* Adjust width for medium screens */
+        width: 80%;
     }
 }
 
-/* Media query for large screens */
+/* Large Screens */
 @media only screen and (min-width: 1201px) {
     .container {
-        width: 650px; /* Reset width for large screens */
+        width: 650px;
     }
 }
