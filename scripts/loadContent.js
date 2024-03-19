@@ -25,11 +25,13 @@ function populateSection(data, section) {
     const contentElement = document.getElementById(`${section}-content`);
     const imageElement = document.getElementById(`${section}-image`);
 
-    if (titleElement && contentElement && imageElement && data) {
+    if (titleElement && contentElement && data) {
         titleElement.textContent = data.title || '';
         contentElement.innerHTML = data.content ? data.content.map(line => `<p>${line}</p>`).join('') : '';
-        imageElement.src = data.image || '';
-        imageElement.alt = data.title || '';
+        if (imageElement) {
+            imageElement.src = data.image || '';
+            imageElement.alt = data.title || '';
+        }
     }
 }
 
