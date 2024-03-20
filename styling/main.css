@@ -12,16 +12,18 @@ html, body {
     overflow: auto; /* Ensure content can scroll */
 }
 
-/* Body */
-body {
+/* Global Fonts */
+body,
+button {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    margin: 0;
-    padding: 0;
+}
+
+/* Body */
+body {
     scroll-behavior: smooth;
-    display: grid;
     background: #fff;
 }
 
@@ -72,7 +74,6 @@ body {
 /* Headings */
 h1,
 h2 {
-    font-family: 'Garamond', serif;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -87,15 +88,22 @@ h2 {
     font-size: 1em;
 }
 
+/* Paragraphs */
+p {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1em;
+} 
+
 /* General Section Styling */
 .section {
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 20px;
+    padding-left: 6em;
+    padding-right: 6em;
+    padding-bottom: 3em;
 }
 
 .section-title {
@@ -107,41 +115,12 @@ h2 {
     flex-direction: row;
     align-items: center;
     background-color: white;
-    align-content: center;
-    justify-content: center;
+    padding: 20px; /* Add some padding to the container */
 }
 
-/* Keyframe Animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Sections Styling */
-.section[id] {
-    background-color: white;
-}
-
-.section-title[id] {
-    margin-bottom: 10px;
-}
-
-.section-content[id] {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 20px;
-    flex: 1;
-}
-
-#home-image,
-#schedule-image,
-#travel-image,
-#accommodation-image,
-#ceremony-image,
-#venue-image,
-#thingstodo-image,
-#faqs-image,
-#rsvp-image {
+.section-content > * {
+    flex: 1; /* Each item takes up equal space */
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,6 +129,16 @@ h2 {
     align-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin: 0 10px; /* Add some space between items */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.section-content > img {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    max-height: 100%; /* Ensure image doesn't exceed container height */
+    object-fit: cover; /* Fill content area while maintaining aspect ratio */
 }
 
 /* Media Queries for Responsive Design */
