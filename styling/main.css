@@ -41,7 +41,6 @@ body {
 .header-section {
     position: relative;
     text-align: center;
-    color: #fff;
     width: 100%;
     height: fit-content;
     box-sizing: border-box;
@@ -74,9 +73,7 @@ body {
 /* Headings */
 h1,
 h2 {
-    text-align: center;
     text-transform: uppercase;
-    letter-spacing: 5px;
     color: #b1b1b1;
 }
 
@@ -85,7 +82,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 /* Paragraphs */
@@ -103,19 +100,24 @@ p {
     align-items: center;
     padding-left: 6em;
     padding-right: 6em;
-    padding-bottom: 3em;
+    padding-bottom: 1.5em;
 }
 
+.home-section-content {
+    padding: 20px;
+    height: auto;
+    width: auto;
+}
+
+#home-section {
+    text-wrap: none;
+}
+
+.section-content,
 .section-title {
-    margin-bottom: 10px;
-}
-
-.section-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: white;
-    padding: 20px; /* Add some padding to the container */
 }
 
 .section-content > * {
@@ -131,14 +133,14 @@ p {
     flex-wrap: nowrap;
     box-sizing: border-box; /* Include padding in width calculation */
     margin: 0 10px; /* Add some space between items */
-    border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .section-content > img {
     max-width: 100%; /* Ensure image doesn't exceed container width */
     max-height: 100%; /* Ensure image doesn't exceed container height */
     object-fit: cover; /* Fill content area while maintaining aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 /* Media Queries for Responsive Design */

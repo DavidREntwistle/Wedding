@@ -12,6 +12,7 @@ async function loadContent() {
                 throw new Error(`Failed to fetch ${section} content`);
             }
             const data = await response.json();
+            // console.log(`Fetched ${section} data:`, data); // Log the fetched data
             populateSection(data, section);
         } catch (error) {
             console.error(`Error loading ${section} content:`, error);
@@ -19,21 +20,33 @@ async function loadContent() {
     }
 }
 
-// Function to populate section content
 function populateSection(data, section) {
     const titleElement = document.getElementById(`${section}-title`);
-    const contentElement = document.getElementById(`${section}-content`);
+    const contentContainer = document.getElementById(`${section}-content`);
     const imageElement = document.getElementById(`${section}-image`);
 
-    if (titleElement && contentElement && data) {
+    if (titleElement && contentContainer && data && data.content) {
         titleElement.textContent = data.title || '';
-        contentElement.innerHTML = data.content ? data.content.map(line => `<p>${line}</p>`).join('') : '';
-        if (imageElement) {
-            imageElement.src = data.image || '';
+
+        // Clear existing content
+        contentContainer.innerHTML = '';
+
+        // Populate content paragraphs
+        data.content.forEach((line, index) => {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = line.trim(); // Trim any leading/trailing whitespace
+            paragraph.id = `${section}-content-${index + 1}`; // Unique ID for each paragraph
+            contentContainer.appendChild(paragraph); // Append paragraph to content container
+        });
+
+        // Update image element if image URL is provided
+        if (imageElement && data.image) {
+            imageElement.src = data.image;
             imageElement.alt = data.title || '';
         }
     }
 }
+
 
 // Call the function to load content
 loadContent();
