@@ -56,23 +56,6 @@ document.querySelector('.close-icon').addEventListener('click', function () {
     closeIcon.classList.add('hide-close');
 });
 
-// Function to toggle translucent navigation bar
-function toggleTranslucent() {
-    const navigation = document.getElementById('nav-bar');
-    navigation.classList.toggle('translucent', window.scrollY > 0);
-}
-
-// Function to restore navigation bar appearance
-function restoreAppearance() {
-    const navigation = document.getElementById('nav-bar');
-    navigation.classList.remove('translucent');
-}
-
-// Add event listeners for scroll and mouse hover
-window.addEventListener('scroll', toggleTranslucent);
-document.getElementById('nav-bar').addEventListener('mouseenter', restoreAppearance);
-document.getElementById('nav-bar').addEventListener('mouseleave', toggleTranslucent);
-
 // Function to handle sticky navigation bar adjusted for SimpleBar
 function stickyNavBar() {
     const navBar = document.getElementById("nav-bar");
@@ -84,12 +67,34 @@ function stickyNavBar() {
         const headerBottom = header.offsetTop + header.offsetHeight;
         const scrollTop = simpleBarContainer.scrollTop; // Get the scroll position of the SimpleBar container
 
+        // Toggle sticky class
         navBar.classList.toggle("sticky", scrollTop > headerBottom);
+
+        // Toggle translucent class if the navigation bar is sticky
+        if (scrollTop > headerBottom) {
+            navBar.classList.add("translucent");
+        } else {
+            navBar.classList.remove("translucent");
+        }
     }
 }
 
-// Adjusting the event listener to work with SimpleBar
-document.querySelector('#main-content .simplebar-content-wrapper').addEventListener('scroll', stickyNavBar);
+// Function to attach scroll event listener to SimpleBar container
+function attachScrollListener() {
+    try {
+        const simpleBarContainer = document.querySelector('#main-content .simplebar-content-wrapper');
+        if (simpleBarContainer) {
+            simpleBarContainer.addEventListener('scroll', stickyNavBar);
+        } else {
+            console.error('SimpleBar container not found.');
+        }
+    } catch (error) {
+        console.error('Error attaching scroll listener:', error);
+    }
+}
+
+// Call the function after the content is loaded
+window.addEventListener('load', attachScrollListener);
 
 // Function to scroll to top of the page
 function scrollToTop() {

@@ -27,6 +27,12 @@
     display: none; /* Hide the navigation bar initially */
 }
 
+/* Styling for the translucent navigation bar */
+.nav-bar.translucent {
+    background-color: rgba(255, 255, 255, 0.6); /* Adjust the opacity for a translucent effect */
+    backdrop-filter: blur(10px); /* Apply a blur effect to create translucency */
+}
+
 /* Styling to stick navigation bar to top of viewport */
 .sticky {
     position: fixed;
@@ -35,14 +41,10 @@
     right: 0; /* Center the navigation bar horizontally */
 }
 
-/* Styling for the translucent navigation bar */
-.nav-bar.translucent {
-    background-color: rgba(255, 255, 255, 0.9); /* Adjust the opacity for a translucent effect */
-}
-
-/* Display the navigation bar after the correct password is entered */
-.password-entered .nav-bar {
-    display: flex; /* Display the navigation bar */
+/* Display topbar and copyright section after the correct password is entered */
+.password-entered .nav-bar,
+.password-entered .copyright {
+    display: flex; /* Display the navigation bar and copyright section */
 }
 
 /* Other responsive changes */
@@ -77,18 +79,12 @@
     bottom: 0; /* Position at the bottom */
     z-index: 100; /* Ensure the copyright section appears above other content */
     background-color: #fff; /* Background color of the copyright section */
-    padding: 20px; /* Padding for spacing */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow effect for depth */
+    padding: 10px 20px; /* Reduced padding for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     justify-content: center; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
     color: #333; /* Text color of the copyright section */
     display: none; /* Hide the copyright section initially */
-}
-
-/* Display topbar and copyright section after the correct password is entered */
-.password-entered .nav-bar,
-.password-entered .copyright {
-    display: flex; /* Display the navigation bar and copyright section */
 }
 
 /* Bottom navigation container */
