@@ -40,41 +40,30 @@ body {
 /* Header Section */
 .header-section {
     position: relative;
-    text-align: center;
     width: 100%;
     height: fit-content;
     box-sizing: border-box;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-}
-
-.header-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 250px;
-    width: auto;
-    align-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px; /* Reduce padding to make it smaller vertically */
 }
 
-.header-image img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
+.header-section h1 {
+    color: #BFD3C1;
 }
 
 /* Headings */
 h1,
 h2 {
+    text-align: center;
     text-transform: uppercase;
-    color: #b1b1b1;
+    color: #333;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 /* Font Sizes */
@@ -115,13 +104,17 @@ p {
 }
 
 .home-section-content {
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    align-items: center;
     padding: 20px;
-    height: auto;
-    width: auto;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
-#home-section {
-    text-wrap: none;
+.home-section-content img {
+    max-width: 50%; /* Ensure image does not exceed container width */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .section-content,
@@ -129,6 +122,7 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 2em;
 }
 
 .section-content > * {
@@ -149,7 +143,7 @@ p {
 .section-content > img {
     max-width: 100%; /* Ensure image doesn't exceed container width */
     max-height: 100%; /* Ensure image doesn't exceed container height */
-    object-fit: cover; /* Fill content area while maintaining aspect ratio */
+    object-fit: fill; /* Fill content area while maintaining aspect ratio */
     border-radius: 10px; /* Add rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }

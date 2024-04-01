@@ -22,9 +22,9 @@
     height: 50px; /* Set the height of the navigation bar */
     justify-content: space-evenly; /* Equally space items horizontally */
     align-items: center; /* Center items vertically */
-    color: #333; /* Text color of the navigation bar */
     transition: background-color 0.3s ease; /* Transition for smooth background color change */
     display: none; /* Hide the navigation bar initially */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 /* Styling for the translucent navigation bar */
@@ -95,7 +95,7 @@
 /* Styling for the scroll to top button */
 #scrollToTopBtn {
     background-color: #fff; /* Button background color */
-    color: black; /* Button text color */
+    color: #333; /* Button text color */
     border: 1px solid #333; /* Add border around the button */
     border-radius: 5px; /* Rounded corners */
     padding: 10px 20px; /* Padding for the button */

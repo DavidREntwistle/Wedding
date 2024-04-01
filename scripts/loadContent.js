@@ -25,8 +25,11 @@ function populateSection(data, section) {
     const contentContainer = document.getElementById(`${section}-content`);
     const imageElement = document.getElementById(`${section}-image`);
 
-    if (titleElement && contentContainer && data && data.content) {
-        titleElement.textContent = data.title || '';
+    if (data && data.content && contentContainer) {
+        // Set the title if available
+        if (titleElement) {
+            titleElement.textContent = data.title || '';
+        }
 
         // Clear existing content
         contentContainer.innerHTML = '';
@@ -46,7 +49,6 @@ function populateSection(data, section) {
         }
     }
 }
-
 
 // Call the function to load content
 loadContent();
