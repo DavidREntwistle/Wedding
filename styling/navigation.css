@@ -17,20 +17,19 @@
     left: 0; /* Position at the left of the viewport */
     width: auto; /* Auto width of the viewport initially */
     z-index: 1000; /* Ensure the navigation bar appears above other content */
-    background-color: #fff; /* Background color of the navigation bar */
+    background-color: #BFD3C1; /* Background color of the navigation bar */
     padding: 10px 20px; /* Reduce padding to make it smaller vertically */
     height: 50px; /* Set the height of the navigation bar */
     justify-content: space-evenly; /* Equally space items horizontally */
     align-items: center; /* Center items vertically */
     transition: background-color 0.3s ease; /* Transition for smooth background color change */
     display: none; /* Hide the navigation bar initially */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 /* Styling for the translucent navigation bar */
 .nav-bar.translucent {
-    background-color: rgba(255, 255, 255, 0.6); /* Adjust the opacity for a translucent effect */
-    backdrop-filter: blur(10px); /* Apply a blur effect to create translucency */
+    background-color: rgba(191, 211, 193, 0.9); /* Background color of the translucent navigation bar with opacity */
+    backdrop-filter: blur(2px); /* Apply a subtle blur effect to create translucency */
 }
 
 /* Styling to stick navigation bar to top of viewport */
@@ -64,13 +63,13 @@
 
 .nav-links a {
     text-decoration: none; /* Remove default underline */
-    color: #333; /* Text color of the navigation links */
-    font-size: 18px; /* Font size of the navigation links */
+    color: #fff; /* Text color of the navigation links */
+    font-size: 1.25em;; /* Font size of the navigation links */
     transition: color 0.3s; /* Transition for smooth color change on hover */
 }
 
 .nav-links a:hover {
-    color: #BFD3C1; /* Text color on hover */
+    color: #F7D56A; /* Slightly lighter golden yellow on hover */
 }
 
 /* Styling for the copyright section */
@@ -78,12 +77,12 @@
     position: relative; /* Relative positioning */
     bottom: 0; /* Position at the bottom */
     z-index: 100; /* Ensure the copyright section appears above other content */
-    background-color: #fff; /* Background color of the copyright section */
+    background-color: #BFD3C1; /* Background color of the navigation bar */
     padding: 10px 20px; /* Reduced padding for spacing */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     justify-content: center; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
-    color: #333; /* Text color of the copyright section */
+    color: #fff; /* Text color of the copyright section */
     display: none; /* Hide the copyright section initially */
 }
 

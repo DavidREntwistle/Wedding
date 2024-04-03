@@ -24,7 +24,7 @@ button {
 /* Body */
 body {
     scroll-behavior: smooth;
-    background: #fff;
+    background: #D7E5DB;
 }
 
 /* Container */
@@ -50,10 +50,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 10px 20px; /* Reduce padding to make it smaller vertically */
-}
-
-.header-section h1 {
-    color: #BFD3C1;
+    background: #fff;
 }
 
 /* Headings */
@@ -61,7 +58,6 @@ h1,
 h2 {
     text-align: center;
     text-transform: uppercase;
-    color: #333;
     margin-bottom: 0;
     margin-top: 0;
 }
@@ -69,27 +65,20 @@ h2 {
 /* Font Sizes */
 h1 {
     font-size: 2em;
+    color: #BFD3C1;
 }
 
 h2 {
     font-size: 1.5em;
+    color: #fff;
 }
 
 p {
     font-size: 1em;
     line-height: 1.7em;
-}
-
-/* Content paragraphs */
-#rsvp-content,
-#rsvp-content-1,
-#rsvp-content-2,
-#rsvp-content-3,
-#rsvp-content-4,
-#rsvp-content-5 {
     text-align: center; /* Center align the text */
-    line-height: normal; /* Normal line height */
-    margin-bottom: 0em; /* Ensures minimal spacing between paragraphs */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* General Section Styling */
@@ -114,38 +103,51 @@ p {
 .home-section-content img {
     max-width: 50%; /* Ensure image does not exceed container width */
     border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
-.section-content,
 .section-title {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.section-content {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 2em;
 }
 
-.section-content > * {
-    flex: 1; /* Each item takes up equal space */
-    padding: 20px;
+.section-image,
+.section-text {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 300px; /* Or adjust as needed */
     width: auto;
     align-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    box-sizing: border-box; /* Include padding in width calculation */
-    margin: 0 10px; /* Add some space between items */
+    box-sizing: border-box;
+    margin: 0 3px;
+    border-radius: 10px;
 }
 
-.section-content > img {
-    max-width: 100%; /* Ensure image doesn't exceed container width */
-    max-height: 100%; /* Ensure image doesn't exceed container height */
-    object-fit: fill; /* Fill content area while maintaining aspect ratio */
-    border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+.section-text {
+    background: #fff;
+}
+
+.section-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Content paragraphs */
+#home-content {
+    color: #fff;
 }
 
 /* Media Queries for Responsive Design */
