@@ -92,32 +92,41 @@ p {
     padding-bottom: 1.5em;
 }
 
-.home-section-content {
+.home-section-title {
     display: flex;
-    flex-direction: column; /* Display items vertically */
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding in width calculation */
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
 }
 
-.home-section-content img {
-    max-width: 50%; /* Ensure image does not exceed container width */
-    border-radius: 10px; /* Add rounded corners */
+.home-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section-title {
+    display: flex;
     text-align: center;
-    margin-top: 2em;
+    height: 9em;
     margin-bottom: 1em;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
 }
 
 .section-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 2em;
 }
 
+.home-section-image,
 .section-image,
 .section-text {
     flex: 1;
@@ -130,7 +139,7 @@ p {
     flex-direction: column;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    margin: 0 3px;
+    margin: 0.5em;
     border-radius: 10px;
 }
 
@@ -145,9 +154,9 @@ p {
     border-radius: 10px;
 }
 
-/* Content paragraphs */
-#home-content {
-    color: #fff;
+.home-section-image img {
+    max-width: 50%; /* Ensure image does not exceed container width */
+    border-radius: 10px; /* Add rounded corners */
 }
 
 /* Media Queries for Responsive Design */
