@@ -68,10 +68,6 @@
     transition: color 0.3s, text-decoration 0.3s; /* Add transition for smooth underline effect */
 }
 
-.nav-links a.active[href="#header"] {
-    text-decoration: underline; /* Underline the active Home link */
-}
-
 .nav-links a:hover {
     color: #e5e5e5; /* Text color of the navigation links */
     text-decoration: underline; /* Underline the links on hover */

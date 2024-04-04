@@ -1,43 +1,44 @@
 // navigation.js
 
+// Function to handle navigation link click
+function handleNavLinkClick(e) {
+    e.preventDefault();
+    
+    const path = this.getAttribute('href');
+    const target = document.querySelector(path);
+    if (target) {
+        // Scroll to the target section
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'start'
+        });
+
+        // Hide the navigation overlay
+        const overlay = document.querySelector('.nav-overlay');
+        overlay.style.display = 'none';
+
+        // Restore the burger menu
+        const burgerIcon = document.querySelector('.burger-menu');
+        const closeIcon = document.querySelector('.close-icon');
+        burgerIcon.classList.remove('hide-close');
+        closeIcon.classList.add('hide-close');
+        
+        // Update the URL without page reload
+        // if (path !== '#home') {
+        //     const url = window.location.origin + path; // Construct the full URL
+        //     window.history.pushState({ path: url }, '', url);
+        // } else {
+        //     window.history.pushState({ path: window.location.origin }, '', window.location.origin);
+        // }
+        // Need to improve this are so it doesn't display as e.g. /#rsvp 
+    }
+}
+
 // Add an event listener to all anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-                inline: 'start'
-            });
-
-            // Remove underline style from all links
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-            });
-
-            // Add underline style to the clicked link
-            this.classList.add('active');
-
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.remove('active');
-
-            const overlay = document.querySelector('.nav-overlay');
-            overlay.style.display = 'none';
-
-            // Restore the burger menu
-            const burgerIcon = document.querySelector('.burger-menu');
-            const closeIcon = document.querySelector('.close-icon');
-            burgerIcon.classList.remove('hide-close');
-            closeIcon.classList.add('hide-close');
-        }
-    });
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', handleNavLinkClick);
 });
-
-// Add 'active' class to the Home link by default
-document.querySelector('.nav-links a[href="#header"]').classList.add('active');
 
 // Add event listener for burger menu
 document.querySelector('.burger-menu').addEventListener('click', function () {
@@ -72,7 +73,7 @@ document.querySelector('.close-icon').addEventListener('click', function () {
 // Function to handle sticky navigation bar adjusted for SimpleBar
 function stickyNavBar() {
     const navBar = document.getElementById("nav-bar");
-    const header = document.getElementById("header");
+    const header = document.getElementById("home");
 
     // Assuming SimpleBar is applied on an element with the ID 'main-content'
     var simpleBarContainer = document.querySelector('#main-content .simplebar-content-wrapper');
