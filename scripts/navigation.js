@@ -1,6 +1,6 @@
 // navigation.js
 
-// Smooth scroll for anchor links
+// Add an event listener to all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,6 +12,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start',
                 inline: 'start'
             });
+
+            // Remove underline style from all links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add underline style to the clicked link
+            this.classList.add('active');
 
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.remove('active');
@@ -27,6 +35,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Add 'active' class to the Home link by default
+document.querySelector('.nav-links a[href="#header"]').classList.add('active');
 
 // Add event listener for burger menu
 document.querySelector('.burger-menu').addEventListener('click', function () {

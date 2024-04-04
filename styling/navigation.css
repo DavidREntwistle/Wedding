@@ -65,11 +65,20 @@
     text-decoration: none; /* Remove default underline */
     color: #fff; /* Text color of the navigation links */
     font-size: 1.25em;; /* Font size of the navigation links */
-    transition: color 0.3s; /* Transition for smooth color change on hover */
+    transition: color 0.3s, text-decoration 0.3s; /* Add transition for smooth underline effect */
+}
+
+.nav-links a.active[href="#header"] {
+    text-decoration: underline; /* Underline the active Home link */
 }
 
 .nav-links a:hover {
-    color: #F7D56A; /* Slightly lighter golden yellow on hover */
+    color: #e5e5e5; /* Text color of the navigation links */
+    text-decoration: underline; /* Underline the links on hover */
+}
+
+.nav-links a.clicked {
+    text-decoration: underline; /* Underline the clicked links */
 }
 
 /* Styling for the copyright section */

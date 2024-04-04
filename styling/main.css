@@ -57,19 +57,19 @@ body {
 h1,
 h2 {
     text-align: center;
-    text-transform: uppercase;
     margin-bottom: 0;
     margin-top: 0;
 }
 
 /* Font Sizes */
 h1 {
+    text-transform: uppercase;
     font-size: 2em;
     color: #BFD3C1;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: #fff;
 }
 
@@ -124,16 +124,26 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.home-section-text {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .home-section-image,
+.home-section-text,
 .section-image,
 .section-text {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px; /* Or adjust as needed */
+    height: auto;
     width: auto;
     align-content: center;
     flex-direction: column;
@@ -141,10 +151,11 @@ p {
     box-sizing: border-box;
     margin: 0.5em;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .section-text {
-    background: #fff;
+    word-wrap: break-word;
 }
 
 .section-image img {
@@ -157,6 +168,15 @@ p {
 .home-section-image img {
     max-width: 50%; /* Ensure image does not exceed container width */
     border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* [id*="-content-"] {
+    text-align: left;
+} */
+
+[id^="travel-content-"] {
+    text-align: left;
 }
 
 /* Media Queries for Responsive Design */

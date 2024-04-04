@@ -2,7 +2,7 @@
 
 // Function to fetch and process JSON data
 async function loadContent() {
-    const sections = ['home', 'schedule', 'travel', 'accommodation', 'ceremony', 'venue', 'thingstodo', 'faqs', 'rsvp'];
+    const sections = ['home', 'thedetails', 'travel', 'accommodation', 'ceremony', 'venue', 'thingstodo', 'faqs', 'rsvp'];
 
     // Iterate over each section
     for (const section of sections) {
