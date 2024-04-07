@@ -10,6 +10,7 @@ html, body {
 #main-content {
     height: 100vh; /* 100% of the viewport height */
     overflow: auto; /* Ensure content can scroll */
+    overflow-x: hidden;
 }
 
 /* Global Fonts */
@@ -24,17 +25,6 @@ button {
 /* Body */
 body {
     scroll-behavior: smooth;
-    background: #D7E5DB;
-}
-
-/* Container */
-.container {
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    width: 650px;
-    height: 480px;
-    text-align: center;
 }
 
 /* Header Section */
@@ -43,7 +33,6 @@ body {
     width: 100%;
     height: fit-content;
     box-sizing: border-box;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -90,6 +79,7 @@ p {
     padding-left: 6em;
     padding-right: 6em;
     padding-bottom: 1.5em;
+    background: #D7E5DB;
 }
 
 .home-section-title {
@@ -179,25 +169,44 @@ p {
     text-align: left;
 }
 
-/* Media Queries for Responsive Design */
+/* Responsive Styling */
+@media only screen and (max-width: 768px) {
+    /* Adjust padding for smaller devices */
+    .section {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
 
-/* Small Screens */
-@media only screen and (max-width: 600px) {
-    .container {
-        width: 100%;
+    /* Adjust font sizes for smaller devices */
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.8em;
     }
 }
 
-/* Medium Screens */
-@media only screen and (min-width: 601px) and (max-width: 1200px) {
-    .container {
-        width: 80%;
+@media only screen and (max-width: 480px) {
+    /* Further adjustments for smaller devices */
+    .section {
+        padding-left: 1em;
+        padding-right: 1em;
     }
-}
 
-/* Large Screens */
-@media only screen and (min-width: 1201px) {
-    .container {
-        width: 650px;
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.7em;
     }
 }

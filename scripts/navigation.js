@@ -14,16 +14,9 @@ function handleNavLinkClick(e) {
             inline: 'start'
         });
 
-        // Hide the navigation overlay
-        const overlay = document.querySelector('.nav-overlay');
-        overlay.style.display = 'none';
+        // Close the burger menu
+        closeBurgerMenu();
 
-        // Restore the burger menu
-        const burgerIcon = document.querySelector('.burger-menu');
-        const closeIcon = document.querySelector('.close-icon');
-        burgerIcon.classList.remove('hide-close');
-        closeIcon.classList.add('hide-close');
-        
         // Update the URL without page reload
         // if (path !== '#home') {
         //     const url = window.location.origin + path; // Construct the full URL
@@ -35,39 +28,15 @@ function handleNavLinkClick(e) {
     }
 }
 
+// Function to close the burger menu
+function closeBurgerMenu() {
+    document.getElementById("overlay").classList.remove('active');
+    document.querySelector('.burger-menu').classList.remove('active');
+}
+
 // Add an event listener to all anchor links
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', handleNavLinkClick);
-});
-
-// Add event listener for burger menu
-document.querySelector('.burger-menu').addEventListener('click', function () {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-
-    const overlay = document.querySelector('.nav-overlay');
-    overlay.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
-
-    // Toggle between burger icon and close icon
-    const burgerIcon = document.querySelector('.burger-menu');
-    const closeIcon = document.querySelector('.close-icon');
-    burgerIcon.classList.toggle('hide-close');
-    closeIcon.classList.toggle('hide-close');
-});
-
-// Add event listener for close icon
-document.querySelector('.close-icon').addEventListener('click', function () {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.remove('active');
-
-    const overlay = document.querySelector('.nav-overlay');
-    overlay.style.display = 'none';
-
-    // Restore the burger menu
-    const burgerIcon = document.querySelector('.burger-menu');
-    const closeIcon = document.querySelector('.close-icon');
-    burgerIcon.classList.remove('hide-close');
-    closeIcon.classList.add('hide-close');
 });
 
 // Function to handle sticky navigation bar adjusted for SimpleBar
@@ -109,6 +78,22 @@ function attachScrollListener() {
 
 // Call the function after the content is loaded
 window.addEventListener('load', attachScrollListener);
+
+// Function to toggle the navigation menu
+function toggleNav() {
+    var overlay = document.getElementById("overlay");
+    overlay.classList.toggle("active");
+    var burgerMenu = document.querySelector(".burger-menu");
+    burgerMenu.classList.toggle("active");
+}
+
+// Add event listener to the close button if it exists
+var closeButton = document.querySelector('.closebtn');
+if (closeButton) {
+    closeButton.addEventListener('click', function() {
+        closeBurgerMenu();
+    });
+}
 
 // Function to scroll to top of the page
 function scrollToTop() {

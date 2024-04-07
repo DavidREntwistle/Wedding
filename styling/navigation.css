@@ -1,13 +1,19 @@
 /* navigation.css */
 
 /* Customizing SimpleBar Scrollbar */
-.simplebar-horizontal .simplebar-scrollbar:before {
-    background-color: #BFD3C1;
+.simplebar-vertical.simplebar-scrollbar {
+    width: 100px;
+    right: 0; /* Move the scrollbar to the right edge of the container */
 }
 
-/* Adjust scrollbar width */
-.simplebar-vertical.simplebar-track {
-    width: 30px;
+.simplebar-vertical.simplebar-scrollbar::before {
+    background-color: #fff; /* Scrollbar handle color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); /* Add shadow to scrollbar handle */
+}
+
+.simplebar-track.simplebar-horizontal {
+    display: none;
 }
 
 /* Styling for the navigation bar */
@@ -58,13 +64,13 @@
 }
 
 .nav-links li {
-    margin-right: 20px; /* Add margin between list items */
+    margin-inline-end: 1em; /* Use a more appropriate gap between list items. margin-inline-end is the recommended property for gap between flex items. */
 }
 
 .nav-links a {
     text-decoration: none; /* Remove default underline */
     color: #fff; /* Text color of the navigation links */
-    font-size: 1.25em;; /* Font size of the navigation links */
+    font-size: 1.25em; /* Default font size of the navigation links */
     transition: color 0.3s, text-decoration 0.3s; /* Add transition for smooth underline effect */
 }
 
@@ -94,6 +100,7 @@
 /* Bottom navigation container */
 .bottom-nav {
     text-align: center; /* Center the content horizontally */
+    background-color: #D7E5DB; /* Background color of the navigation bar */
 }
 
 /* Styling for the scroll to top button */
@@ -117,54 +124,6 @@
     background-color: #9e9e9e; /* Darker background color on hover */
 }
 
-/* Styling for the burger menu container */
-.burger-menu {
-    display: none; /* Hide the burger menu by default */
-    cursor: pointer; /* Change cursor to pointer */
-}
-
-/* Styling for the burger icon */
-.burger-icon, .close-icon {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    cursor: pointer; /* Change cursor to pointer */
-    transition: transform 0.4s ease; /* Smooth transition for animation */
-}
-
-/* Styling for the close icon */
-.close-icon {
-    transform: rotate(45deg); /* Rotate to form X */
-}
-
-/* Lines for the close icon */
-.close-icon::before,
-.close-icon::after {
-    content: ''; /* Empty content */
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    position: absolute;
-    transition: transform 0.4s ease; /* Smooth transition for animation */
-}
-
-/* Rotate and position lines for X shape */
-.close-icon::before {
-    top: -8px;
-    transform: rotate(-90deg);
-}
-
-.close-icon::after {
-    top: 8px;
-    transform: rotate(90deg);
-}
-
-/* Hide lines of close icon initially */
-.close-icon.hide-close::before,
-.close-icon.hide-close::after {
-    display: none;
-}
-
 /* Display the navigation links when active */
 .nav-links.active {
     display: flex;
@@ -183,51 +142,93 @@
     opacity: 1;
 }
 
-.nav-overlay {
+/* Overlay styles */
+.overlay {
+    height: 0;
+    width: 100%;
     position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9); /* White overlay with opacity */
-    z-index: 999; /* Ensure the overlay appears above other content */
-    display: none; /* Initially hidden */
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    transition: height 0.5s ease;
 }
 
-/* Media queries for responsive design */
-/* Media query for small screens */
-@media only screen and (max-width: 600px) {
-    .nav-links {
-        /* Existing styles */
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        opacity: 0; /* Initially hide the navigation links */
-        pointer-events: none; /* Disable pointer events to prevent interaction */
-        z-index: 99; /* Ensure the links appear above other content */
-    }
+.overlay.active {
+    height: 100%;
+}
 
-    .nav-links.active {
-        opacity: 1; /* Make the navigation links visible when active */
-        pointer-events: auto; /* Enable pointer events */
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.overlay-content .nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.overlay-content .nav-links li {
+    margin-bottom: 1em;
+}
+
+.overlay-content .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay-content .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.burger-menu {
+    display: none;
+}
+
+.burger-menu .burger-icon {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 1.5px 4px;
+    transition: transform 0.3s ease;
+}
+
+.burger-menu.active .burger-icon:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .burger-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-icon:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media only screen and (max-width: 1200px) {
+    #nav-links {
+        display: none;
     }
 
     .burger-menu {
-        display: block; /* Display burger menu icon */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
-}
 
-/* Media query for medium screens */
-@media only screen and (min-width: 601px) and (max-width: 1200px) {
-    .nav-links {
-        width: 60%; /* Reset width for medium screens */
-    }
-}
-
-/* Media query for large screens */
-@media only screen and (min-width: 1201px) {
-    .nav-links {
-        width: 80%; /* Reset width for large screens */
+    #overlay.active #overlay-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
