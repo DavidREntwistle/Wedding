@@ -7,7 +7,7 @@ function updateCountdown() {
     const now = new Date();
 
     // Set the wedding date and time in local timezone (Ireland)
-    const weddingDate = new Date('March 7, 2025 12:00:00 GMT+0000');
+    const weddingDate = new Date('March 7, 2025 13:00:00 GMT+0000');
 
     // Calculate the difference in milliseconds
     const diff = weddingDate - now;
