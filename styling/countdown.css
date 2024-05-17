@@ -1,11 +1,10 @@
 /* countdown.css */
 
 /* Countdown timer */
-#timer {
-    color: #F6F4F3;
+#header-timer,
+#nav-timer {
     text-align: center;
     text-transform: uppercase;
-    font-size: 0.5em;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -14,6 +13,8 @@
 .hours,
 .minutes,
 .seconds {
+    color: #fff;
+    font-size: 0.5em;
     display: inline-block;
     padding: 3px;
     width: 70px;
@@ -26,15 +27,6 @@
     font-size: 5em;
 }
 
-.white {
-    position: absolute;
-    background: #fff;
-    height: 85px;
-    width: 75px;
-    left: 30%;
-    top: 2%;
-}
-
 .message {
     color: #b1b1b1;
     text-align: center;
@@ -44,33 +36,73 @@
     margin-top: 25%;
 }
 
-/* Media queries for responsive design */
-
-/* Media query for small screens */
-@media only screen and (max-width: 600px) {
-    .white {
-        left: 10%; /* Adjust position for small screens */
-        width: 60px; /* Adjust width for small screens */
-    }
-
+/* Very small devices (phones, 369px and down) */
+@media only screen and (min-width: 1px) and (max-width: 369px) {
+    .days,
+    .hours,
+    .minutes,
+    .seconds,
+    .numbers,
     .message {
-        font-size: 3em; /* Adjust font size for small screens */
+        display: none
     }
 }
 
-/* Media query for medium screens */
-@media only screen and (min-width: 601px) and (max-width: 1200px) {
-    .white {
-        left: 20%; /* Adjust position for medium screens */
-        width: 70px; /* Adjust width for medium screens */
+/* Mobile phones (portrait and landscape) */
+@media only screen and (min-width: 370px) and (max-width: 480px) {
+    .days,
+    .hours,
+    .minutes,
+    .seconds {
+        display: inline-block;
+        font-size: auto;
+        padding: 3px;
+        width: auto;
+        border-radius: 0;
+        background: transparent;
     }
 
+    .numbers {
+        color: #fff;
+        font-size: 1.5em;
+        width: auto;
+    }
+    
     .message {
-        font-size: 4em; /* Adjust font size for medium screens */
+        color: #b1b1b1;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px;
+        letter-spacing: 5px;
+        margin-top: 25%;
     }
 }
 
-/* Media query for large screens */
-@media only screen and (min-width: 1201px) {
-    /* No changes needed for large screens */
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .days,
+    .hours,
+    .minutes,
+    .seconds {
+        display: inline-block;
+        font-size: auto;
+        padding: 3px;
+        width: auto;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .numbers {
+        color: #fff;
+        font-size: 3em;
+    }
+    
+    .message {
+        color: #b1b1b1;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px;
+        letter-spacing: 5px;
+        margin-top: 25%;
+    }
 }
