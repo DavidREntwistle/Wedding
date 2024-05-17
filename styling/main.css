@@ -169,30 +169,16 @@ p {
     text-align: left;
 }
 
-/* Responsive Styling */
-@media only screen and (max-width: 768px) {
-    /* Adjust padding for smaller devices */
-    .section {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-
-    /* Adjust font sizes for smaller devices */
-    h1 {
-        font-size: 1.5em;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    p {
-        font-size: 0.8em;
+/* Very small devices (phones, 369px and down) */
+@media only screen and (min-width: 1px) and (max-width: 369px) {
+    .header-section {
+        display: none;
     }
 }
 
-@media only screen and (max-width: 480px) {
-    /* Further adjustments for smaller devices */
+/* Mobile phones (portrait and landscape) */
+@media only screen and (min-width: 370px) and (max-width: 480px) {
+ /* Further adjustments for smaller devices */
     .section {
         padding-left: 1em;
         padding-right: 1em;
@@ -208,5 +194,34 @@ p {
 
     p {
         font-size: 0.7em;
+    }
+
+    .header-section {
+        display: none;
+    }
+}
+
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+     /* Further adjustments for smaller devices */
+     .section {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.7em;
+    }
+
+    .header-section {
+        display: none;
     }
 }
