@@ -25,11 +25,11 @@
     z-index: 1000; /* Ensure the navigation bar appears above other content */
     background-color: #BFD3C1; /* Background color of the navigation bar */
     padding: 10px 20px; /* Reduce padding to make it smaller vertically */
-    height: 50px; /* Set the height of the navigation bar */
+    height: 60px; /* Set the height of the navigation bar */
     justify-content: space-evenly; /* Equally space items horizontally */
     align-items: center; /* Center items vertically */
     transition: background-color 0.3s ease; /* Transition for smooth background color change */
-    display: none; /* Hide the navigation bar initially */
+    display: flex; /* Show the navigation bar */
 }
 
 /* Styling for the translucent navigation bar */
@@ -94,7 +94,7 @@
     justify-content: center; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
     color: #fff; /* Text color of the copyright section */
-    display: none; /* Hide the copyright section initially */
+    display: flex; /* Show the navigation bar */
 }
 
 /* Bottom navigation container */
@@ -219,8 +219,12 @@
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Very small devices (phones, 369px and down) */
-@media only screen and (min-width: 1px) and (max-width: 369px) {
+/* Very small devices (phones, 374px and down) */
+@media only screen and (min-width: 1px) and (max-width: 374px) {
+    .nav-bar {
+        height: 40px;
+    }
+
     #nav-links {
         display: none;
     }
@@ -231,7 +235,10 @@
         align-items: center;
         justify-content: center;
         padding: 0.5em;
-        font-size: xx-small;
+    }
+
+    .nav-title h1 {
+        font-size: 1em;
     }
 
     .burger-menu {
@@ -256,7 +263,12 @@
 
 }
 
-@media only screen and (min-width: 370px) and (max-width: 1024px) {
+/* Mobile phones (portrait and landscape) */
+@media only screen and (min-width: 375px) and (max-width: 580px) {
+    .nav-bar {
+        height: 80px;
+    }
+
     #nav-links {
         display: none;
     }
@@ -268,6 +280,10 @@
         justify-content: center;
         white-space: nowrap;
         padding: 0.5em;
+    }
+
+    .nav-title h1 {
+        font-size: 1.20em;
     }
 
     .burger-menu {
@@ -283,8 +299,57 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-evenly;
+        white-space: nowrap;
+    }
+
+    #overlay.active #overlay-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 581px) and (max-width: 1024px) {
+    .nav-bar {
+        height: 100px;
+    }
+
+    #nav-links {
+        display: none;
+    }
+
+    .nav-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         justify-content: center;
         white-space: nowrap;
+        padding: 0.5em;
+    }
+
+    .nav-title h1 {
+        font-size: 2em;
+    }
+
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        padding: 0.5em;
+    }
+
+    #nav-timer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        gap: 1.5em;
     }
 
     #overlay.active #overlay-links {

@@ -36,8 +36,8 @@
     margin-top: 25%;
 }
 
-/* Very small devices (phones, 369px and down) */
-@media only screen and (min-width: 1px) and (max-width: 369px) {
+/* Very small devices (phones, 374px and down) */
+@media only screen and (min-width: 1px) and (max-width: 374px) {
     .days,
     .hours,
     .minutes,
@@ -49,7 +49,7 @@
 }
 
 /* Mobile phones (portrait and landscape) */
-@media only screen and (min-width: 370px) and (max-width: 480px) {
+@media only screen and (min-width: 375px) and (max-width: 580px) {
     .days,
     .hours,
     .minutes,
@@ -60,26 +60,21 @@
         width: auto;
         border-radius: 0;
         background: transparent;
+        font-size: 0.5em;
     }
 
     .numbers {
         color: #fff;
-        font-size: 1.5em;
-        width: auto;
+        font-size: 2.25em;
     }
     
     .message {
-        color: #b1b1b1;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 10px;
-        letter-spacing: 5px;
-        margin-top: 25%;
+        display: none
     }
 }
 
 /* Tablets (portrait and landscape) */
-@media only screen and (min-width: 481px) and (max-width: 1024px) {
+@media only screen and (min-width: 581px) and (max-width: 1024px) {
     .days,
     .hours,
     .minutes,
@@ -90,19 +85,15 @@
         width: auto;
         border-radius: 0;
         background: transparent;
+        font-size: 0.5em;
     }
 
     .numbers {
         color: #fff;
-        font-size: 3em;
+        font-size: 3.5em;
     }
     
     .message {
-        color: #b1b1b1;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 10px;
-        letter-spacing: 5px;
-        margin-top: 25%;
+        display: none
     }
 }
