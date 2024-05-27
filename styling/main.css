@@ -11,6 +11,7 @@ html, body {
     height: 100vh;
     overflow: auto;
     overflow-x: hidden;
+    background-color: #ffffff;
 }
 
 /* Global Fonts */
@@ -20,6 +21,7 @@ button {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    color: #4a4a4a;
 }
 
 /* Body */
@@ -44,7 +46,7 @@ h1 {
 
 h2 {
     font-size: 1.8em;
-    color: #fff;
+    color: #868686;
 }
 
 p {
@@ -61,14 +63,14 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 6em;
-    padding-right: 6em;
-    padding-bottom: 1.5em;
-    background: #D7E5DB;
+    padding: 3em;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
 }
 
-.home-section-title {
-    display: flex;
+.home-section-title,
+.section-title {
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -78,36 +80,12 @@ p {
     flex-wrap: nowrap;
 }
 
-.home-section-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.section-title {
-    display: flex;
-    text-align: center;
-    height: 9em;
-    margin-bottom: 1em;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-}
-
+.home-section-content,
 .section-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-    background: #fff;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.home-section-text {
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .home-section-image,
@@ -125,75 +103,114 @@ p {
     flex-wrap: nowrap;
     box-sizing: border-box;
     margin: 0.5em;
-    border-radius: 10px;
-    overflow: hidden;
 }
 
 .section-text {
     word-wrap: break-word;
 }
 
-.section-image img {
+.section-image img,
+.home-section-image img {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.home-section-image img {
-    max-width: 50%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* [id*="-content-"] {
-    text-align: left;
-} */
-
-[id^="travel-content-"] {
-    text-align: left;
-}
+/* Responsive Styles */
 
 /* Small devices (phones, 369px and down) */
-@media only screen and (min-width: 1px) and (max-width: 369px) {
+@media only screen and (max-width: 369px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .home-section-image img {
+        max-width: 100%;
+    }
+
+    .section-content {
+        flex-direction: column;
+    }
 }
 
 /* Mobile phones (portrait and landscape) */
 @media only screen and (min-width: 370px) and (max-width: 480px) {
-    .section {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
     h1 {
-        font-size: 1.2em;
+        font-size: 2.2em;
     }
 
     h2 {
-        font-size: 1em;
+        font-size: 1.8em;
     }
 
     p {
-        font-size: 0.7em;
+        font-size: 1.2em;
+    }
+
+    .home-section-image img {
+        max-width: 100%;
+    }
+
+    .section-content {
+        flex-direction: column;
     }
 }
 
 /* Tablets (portrait and landscape) */
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
-    .section {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
     h1 {
-        font-size: 1.2em;
+        font-size: 2.4em;
     }
 
     h2 {
-        font-size: 1em;
+        font-size: 2em;
     }
 
     p {
-        font-size: 0.7em;
+        font-size: 1.3em;
+    }
+
+    .home-section-image img {
+        max-width: 80%;
+    }
+
+    .section-content {
+        flex-direction: column;
+    }
+}
+
+/* Large Screens */
+@media only screen and (min-width: 1025px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .home-section-image img {
+        max-width: 60%;
+    }
+
+    .section {
+        padding: 3em;
+    }
+
+    .section-content {
+        flex-direction: row;
     }
 }

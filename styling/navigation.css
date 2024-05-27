@@ -1,13 +1,15 @@
 /* navigation.css */
-/* SimpleBar Scrollbar */
-.simplebar-vertical.simplebar-scrollbar {
-    width: 100px;
-    right: 0;
+
+html {
+    scroll-behavior: smooth;
+
 }
 
-.simplebar-vertical.simplebar-scrollbar::before {
+/* SimpleBar Scrollbar */
+.simplebar-vertical.simplebar-scrollbar {
+    width: 8px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -98,7 +100,6 @@
 /* Bottom navigation bar */
 .bottom-nav {
     text-align: center;
-    background-color: #D7E5DB;
 }
 
 /* Scroll to top button */
@@ -151,6 +152,9 @@
     background-color: rgba(0, 0, 0, 0.5);
     overflow-x: hidden;
     transition: height 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .overlay.active {
@@ -158,17 +162,21 @@
 }
 
 .overlay-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .overlay-content .nav-links {
     list-style: none;
     padding: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .overlay-content .nav-links li {
@@ -355,4 +363,11 @@
         align-items: center;
         justify-content: center;
     }
+}
+
+/* Disable smooth scrolling when users have prefers-reduced-motion enabled */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
