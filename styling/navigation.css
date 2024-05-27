@@ -1,10 +1,5 @@
 /* navigation.css */
 
-html {
-    scroll-behavior: smooth;
-
-}
-
 /* SimpleBar Scrollbar */
 .simplebar-vertical.simplebar-scrollbar {
     width: 8px;
@@ -104,9 +99,9 @@ html {
 
 /* Scroll to top button */
 #scrollToTopBtn {
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #333;
+    background: #ffc2d1;
+    color: #fff;;
+    border: 1px;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
@@ -120,7 +115,7 @@ html {
 }
 
 #scrollToTopBtn:hover {
-    background-color: #9e9e9e;
+    background-color: #cc94a2;
 }
 
 /* Display the navigation links when active */
@@ -149,7 +144,8 @@ html {
     z-index: 1000;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 194, 209, 0.8);
+    backdrop-filter: blur(10px);
     overflow-x: hidden;
     transition: height 0.5s ease;
     display: flex;
@@ -163,6 +159,7 @@ html {
 
 .overlay-content {
     width: 100%;
+    height: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -288,7 +285,7 @@ html {
     }
 
     .nav-title h1 {
-        font-size: 1.20em;
+        font-size: 1em;
     }
 
     .burger-menu {
@@ -363,11 +360,4 @@ html {
         align-items: center;
         justify-content: center;
     }
-}
-
-/* Disable smooth scrolling when users have prefers-reduced-motion enabled */
-@media screen and (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
 }

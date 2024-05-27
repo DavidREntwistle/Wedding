@@ -1,20 +1,17 @@
 // navigation.js
 
 // Function to handle navigation link click
-// function handleNavLinkClick(e) {
-//     e.preventDefault();
-function handleNavLinkClick() {
-
+function handleNavLinkClick(e) {
+    e.preventDefault();
     const path = this.getAttribute('href');
     const target = document.querySelector(path);
     
     if (target) {
         // Scroll to the target section
-        // target.scrollIntoView({
-        //     behavior: 'smooth',
-        //     block: 'start',
-        //     inline: 'start'
-        // });
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
 
         // Close the burger menu
         closeBurgerMenu();
@@ -30,6 +27,11 @@ function handleNavLinkClick() {
     }
 }
 
+// Add an event listener to all anchor links
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', handleNavLinkClick);
+});
+
 // Function to close the burger menu
 function closeBurgerMenu() {
     document.getElementById("overlay").classList.remove('active');
@@ -39,7 +41,7 @@ function closeBurgerMenu() {
 // Function to handle sticky navigation bar adjusted for SimpleBar
 function stickyNavBar() {
     const navBar = document.getElementById("nav-bar");
-    const header = document.getElementById("home");
+    const header = document.getElementById("header");
 
     // Assuming SimpleBar is applied on an element with the ID 'main-content'
     var simpleBarContainer = document.querySelector('#main-content .simplebar-content-wrapper');
@@ -92,13 +94,13 @@ if (closeButton) {
     });
 }
 
-// // Function to scroll to top of the page
-// function scrollToTop() {
-//     var simpleBarContainer = document.querySelector('#main-content .simplebar-content-wrapper');
-//     if (simpleBarContainer) {
-//         simpleBarContainer.scrollTo({ top: 0, behavior: 'smooth' });
-//     }
-// }
+// Function to scroll to top of the page
+function scrollToTop() {
+    var simpleBarContainer = document.querySelector('#main-content .simplebar-content-wrapper');
+    if (simpleBarContainer) {
+        simpleBarContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
 
-// // Add event listener for scroll to top button
-// document.getElementById('scrollToTopBtn').addEventListener('click', scrollToTop);
+// Add event listener for scroll to top button
+document.getElementById('scrollToTopBtn').addEventListener('click', scrollToTop);
