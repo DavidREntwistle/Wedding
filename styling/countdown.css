@@ -1,6 +1,4 @@
 /* countdown.css */
-
-/* Countdown timer */
 #header-timer,
 #nav-timer {
     text-align: center;
@@ -36,7 +34,7 @@
     margin-top: 25%;
 }
 
-/* Very small devices (phones, 374px and down) */
+/* Small devices (phones, 374px and down) */
 @media only screen and (min-width: 1px) and (max-width: 374px) {
     .days,
     .hours,

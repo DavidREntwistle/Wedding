@@ -2,6 +2,7 @@
 /* Used to load in additional styling, rather than adding each to the index.html */
 @import url('password.css');
 @import url('main.css');
+@import url('header.css');
 @import url('navigation.css');
 @import url('countdown.css');
 @import url('https://cdn.jsdelivr.net/npm/simplebar/dist/simplebar.min.css');
