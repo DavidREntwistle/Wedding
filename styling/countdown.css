@@ -3,6 +3,10 @@
 #nav-timer {
     text-align: center;
     text-transform: uppercase;
+}
+
+#header-timer {
+    height: 70px;
     margin-top: 5px;
     margin-bottom: 5px;
 }

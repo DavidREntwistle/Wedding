@@ -1,43 +1,38 @@
 /* main.css */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
-/* Simplebar */
-html, body {
+html, body, div.content {
+    width: 100%;
     height: 100%;
     margin: 0;
 }
 
-#main-content {
-    height: 100vh;
-    overflow: auto;
-    overflow-x: hidden;
-    background-color: #ffffff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Global Fonts */
-body,
-button {
+body, button {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     color: #4a4a4a;
-}
-
-/* Body */
-body {
-    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 /* Headings */
-h1,
-h2 {
+h1, h2, h3, h4 {
     text-align: center;
     margin-bottom: 0;
     margin-top: 0;
 }
 
-/* Font Sizes */
 h1 {
     text-transform: uppercase;
     font-size: 2em;
@@ -49,27 +44,36 @@ h2 {
     color: #868686;
 }
 
+h3 {
+    font-size: 1.6em;
+    color: #868686;
+    line-height: 2em;
+}
+
+h4 {
+    font-size: 1.2em;
+    color: #868686;
+    line-height: 2em;
+}
+
 p {
     font-size: 1em;
-    line-height: 1.7em;
+    line-height: 2em;
     text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 /* General Section Styling */
 .section {
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3em;
-    background: none;
-    box-shadow: none;
-    border-radius: 0;
+    padding: 0 40px 20px;
+    width: 100%;
+    flex: 1;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
 }
 
-.home-section-title,
 .section-title {
     text-align: center;
     margin-top: 1em;
@@ -80,18 +84,17 @@ p {
     flex-wrap: nowrap;
 }
 
-.home-section-content,
 .section-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    overflow: hidden;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
-.home-section-image,
-.home-section-text,
-.section-image,
-.section-text {
+.section-image, .section-text {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -102,115 +105,156 @@ p {
     flex-direction: column;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    margin: 0.5em;
+}
+
+.section-text p {
+    margin-bottom: 1.5em;
 }
 
 .section-text {
     word-wrap: break-word;
 }
 
-.section-image img,
-.home-section-image img {
-    max-width: 100%;
+.section-image img, iframe {
+    max-width: 70vh;
     max-height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
-/* Responsive Styles */
+
+.accommodation-table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 80vw;
+}
+
+.accommodation-table th, .accommodation-table td {
+    border: 1px solid lightgrey;
+    padding: 8px;
+    white-space: wrap;
+    text-align: center;
+}
+
+th {
+    cursor: pointer;
+}
+
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid black;
+}
+.arrow.asc {
+    border-top: none;
+    border-bottom: 10px solid black;
+}
+.arrow.desc {
+    border-bottom: none;
+    border-top: 10px solid black;
+}
 
 /* Small devices (phones, 369px and down) */
 @media only screen and (max-width: 369px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.6em;
     }
 
     h2 {
-        font-size: 1.7em;
+        font-size: 1.4em;
     }
 
-    p {
-        font-size: 1.1em;
+    h3 {
+        font-size: 1.2em;
     }
 
-    .home-section-image img {
-        max-width: 100%;
+    h3 {
+        font-size: 1em;
     }
 
     .section-content {
         flex-direction: column;
+    }
+
+    .accommodation-table th, .accommodation-table td {
+        border: 1px solid lightgrey;
+        padding: 2px 5px;
+        white-space: wrap;
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    .section-image img, iframe {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
 /* Mobile phones (portrait and landscape) */
 @media only screen and (min-width: 370px) and (max-width: 480px) {
     h1 {
-        font-size: 2.2em;
-    }
-
-    h2 {
         font-size: 1.8em;
     }
 
-    p {
-        font-size: 1.2em;
+    h2 {
+        font-size: 1.6em;
     }
 
-    .home-section-image img {
-        max-width: 100%;
+    h3 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.1em;
     }
 
     .section-content {
         flex-direction: column;
+    }
+
+    .accommodation-table th, .accommodation-table td {
+        border: 1px solid lightgrey;
+        padding: 2px 5px;
+        white-space: wrap;
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    .section-image img, iframe {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
 /* Tablets (portrait and landscape) */
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
     h1 {
-        font-size: 2.4em;
+        font-size: 1.9em;
     }
 
     h2 {
-        font-size: 2em;
+        font-size: 1.7em;
     }
 
-    p {
-        font-size: 1.3em;
+    h3 {
+        font-size: 1.5em;
     }
 
-    .home-section-image img {
-        max-width: 80%;
+    h3 {
+        font-size: 1.15em;
     }
 
     .section-content {
         flex-direction: column;
     }
-}
 
-/* Large Screens */
-@media only screen and (min-width: 1025px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    .home-section-image img {
-        max-width: 60%;
-    }
-
-    .section {
-        padding: 3em;
-    }
-
-    .section-content {
-        flex-direction: row;
+    .section-image img, iframe {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
