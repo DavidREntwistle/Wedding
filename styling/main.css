@@ -1,10 +1,16 @@
 /* main.css */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
-html, body, div.content {
-    width: 100%;
+@font-face {
+    font-family: collection;
+    src: url("../assets/fonts/collection/CollectionFree.otf");
+    /* Non-Commercial Use (Personal) */
+}
+
+html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
 }
 
 * {
@@ -15,63 +21,62 @@ html, body, div.content {
 
 /* Global Fonts */
 body, button {
-    font-family: "EB Garamond", serif;
-    font-optical-sizing: auto;
+    font-family: "EB Garamond";
     font-weight: 400;
     font-style: normal;
-    color: #4a4a4a;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
+    color: #919191;
+    letter-spacing: 0.2px;
 }
 
 /* Headings */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     text-align: center;
     margin-bottom: 0;
     margin-top: 0;
+    color: #867755;
+}
+
+h1, h2 {
+    font-family: "collection";
+    font-weight: 550;
+    font-style: normal;
 }
 
 h1 {
-    text-transform: uppercase;
-    font-size: 2em;
-    color: #BFD3C1;
+    font-size: 5em;
 }
 
 h2 {
-    font-size: 1.8em;
-    color: #868686;
+    font-size: 4em;
 }
 
-h3 {
-    font-size: 1.6em;
-    color: #868686;
-    line-height: 2em;
-}
-
-h4 {
-    font-size: 1.2em;
-    color: #868686;
-    line-height: 2em;
+h3, h4, h5 {
+    font-family: "EB Garamond Medium Italic";
+    font-weight: 525;
+    font-style: normal;
+    font-size: normal;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.2em;
 }
 
 p {
-    font-size: 1em;
-    line-height: 2em;
+    font-size: normal;
+    line-height: 1.5em;
     text-align: center;
 }
 
-/* General Section Styling */
+/* Content wrapper */
 .section {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 40px 20px;
     width: 100%;
-    flex: 1;
     flex-wrap: nowrap;
     box-sizing: border-box;
+    min-height: 100vh; /* Ensure the wrapper takes the full viewport height */
+    flex: 1; /* This makes the content area take up the remaining space */
 }
 
 .section-title {
@@ -113,6 +118,7 @@ p {
 
 .section-text {
     word-wrap: break-word;
+    flex-grow: 1;
 }
 
 .section-image img, iframe {
@@ -159,24 +165,22 @@ th {
     border-top: 10px solid black;
 }
 
+/* Id overrides */
+#getting-married {
+    font-style: italic;
+}
+
+#wedding-date, #wedding-location {
+    color: #867755;
+    margin-bottom: 0;
+}
+
+#wedding-location {
+    font-style: italic;
+}
+
 /* Small devices (phones, 369px and down) */
 @media only screen and (max-width: 369px) {
-    h1 {
-        font-size: 1.6em;
-    }
-
-    h2 {
-        font-size: 1.4em;
-    }
-
-    h3 {
-        font-size: 1.2em;
-    }
-
-    h3 {
-        font-size: 1em;
-    }
-
     .section-content {
         flex-direction: column;
     }
@@ -197,22 +201,6 @@ th {
 
 /* Mobile phones (portrait and landscape) */
 @media only screen and (min-width: 370px) and (max-width: 480px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    h2 {
-        font-size: 1.6em;
-    }
-
-    h3 {
-        font-size: 1.4em;
-    }
-
-    h3 {
-        font-size: 1.1em;
-    }
-
     .section-content {
         flex-direction: column;
     }
@@ -233,28 +221,12 @@ th {
 
 /* Tablets (portrait and landscape) */
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
-    h1 {
-        font-size: 1.9em;
-    }
-
-    h2 {
-        font-size: 1.7em;
-    }
-
-    h3 {
-        font-size: 1.5em;
-    }
-
-    h3 {
-        font-size: 1.15em;
-    }
-
     .section-content {
         flex-direction: column;
     }
 
     .section-image img, iframe {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 90%;
+        max-height: 90%;
     }
 }

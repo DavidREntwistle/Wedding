@@ -10,8 +10,8 @@
     align-items: center;
     justify-content: center;
     background: #fff;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 @media only screen and (min-width: 1px) and (max-width: 1024px) {
