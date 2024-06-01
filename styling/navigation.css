@@ -197,6 +197,10 @@ html.overlay-active {
     transition: transform 0.3s ease;
 }
 
+.burger-icon {
+    border-radius: 5px;
+}
+
 .burger-menu.active .burger-icon:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
