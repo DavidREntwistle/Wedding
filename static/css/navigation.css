@@ -37,6 +37,7 @@
     z-index: 1000;
 }
 
+
 .copyright p {
     line-height: normal;
     height: 70px;
@@ -73,9 +74,9 @@
     margin: 0;
     display: flex;
     justify-content: space-evenly;
-    margin: 0 auto;
     height: 70px;
     align-items: center;
+    font-size: 1.25em;
 }
 
 .nav-links li {
@@ -85,7 +86,6 @@
 .nav-links a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.25em;
     transition: color 0.3s, text-decoration 0.3s;
 }
 
@@ -126,7 +126,7 @@
     left: 0;
     background-color: rgba(255, 194, 209);
     overflow-x: hidden;
-    transition: height 0.5s ease;
+    transition: height 0.75s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,16 +141,7 @@ html.overlay-active {
     overflow: hidden;
 }
 
-.overlay-content {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.overlay-content .nav-links {
+.overlay .nav-links {
     list-style: none;
     padding: 0;
     flex-grow: 1;
@@ -159,19 +150,19 @@ html.overlay-active {
     justify-content: center;
 }
 
-.overlay-content .nav-links li {
-    margin-bottom: 1em;
+.overlay .nav-links li {
+    margin: 0.3em;
 }
 
-.overlay-content .nav-links a {
+.overlay .nav-links a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 2em;
     display: block;
     transition: 0.3s;
 }
 
-.overlay-content .nav-links a:hover {
+.overlay .nav-links a:hover {
     text-decoration: underline;
 }
 
@@ -215,10 +206,17 @@ html.overlay-active {
 
 /* Very small devices (phones, 374px and down) */
 @media only screen and (min-width: 1px) and (max-width: 374px) {
+    .overlay .nav-links a {
+        font-size: 1.3em;
+    }
+
+    .nav-links li {
+        margin-inline-end: 0;
+    }
+    
     #nav-links {
         display: none;
     }
-
     
     .nav-title {
         display: flex;
@@ -258,11 +256,20 @@ html.overlay-active {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-top: 4em;
     }
 }
 
 /* Mobile phones (portrait and landscape) */
 @media only screen and (min-width: 375px) and (max-width: 580px) {
+    .overlay .nav-links a {
+        font-size: 1.3em;
+    }
+
+    .nav-links li {
+        margin-inline-end: 0;
+    }
+
     #nav-links {
         display: none;
     }
@@ -310,11 +317,16 @@ html.overlay-active {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-top: 4em;
     }
 }
 
 /* Tablets (portrait and landscape) */
 @media only screen and (min-width: 581px) and (max-width: 1024px) {
+    .nav-links li {
+        margin-inline-end: 0;
+    }
+
     #nav-links {
         display: none;
     }
@@ -329,7 +341,7 @@ html.overlay-active {
     }
 
     .nav-title h1 {
-        font-size: 3em;
+        font-size: 2.5em;
         line-height: 0.5em;
     }
 
@@ -362,5 +374,6 @@ html.overlay-active {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-top: 4em;
     }
 }

@@ -3,9 +3,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Load additional scripts
     // loadScript("scripts/password.js");
-    loadScript("scripts/navigation.js");
-    loadScript("scripts/countdown.js");
-    loadScript("scripts/table.js");
+    loadScript("static/js/navigation.js");
+    loadScript("static/js/countdown.js");
+    loadScript("static/js/table.js");
 
 // Function to load script dynamically
 function loadScript(url) {

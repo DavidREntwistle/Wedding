@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: collection;
-    src: url("../assets/fonts/collection/CollectionFree.otf");
+    src: url("../../static/media/fonts/collection/CollectionFree.otf");
     /* Non-Commercial Use (Personal) */
 }
 
@@ -15,7 +15,6 @@ html, body {
 
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -51,18 +50,45 @@ h2 {
 }
 
 h3, h4, h5 {
-    font-family: "EB Garamond Medium Italic";
-    font-weight: 525;
-    font-style: normal;
-    font-size: normal;
+    font-weight: 520;
     margin-bottom: 0.5em;
-    letter-spacing: 0.2em;
+    margin-top: 0.5em;
+    letter-spacing: 0.3em;
 }
 
-p {
-    font-size: normal;
-    line-height: 1.5em;
+p, a {
+    line-height: 2em;
     text-align: center;
+}
+
+ul, ol {
+    line-height: 1.5em;
+}
+
+/* General styling for all ul elements inside section-content */
+
+.section-text ol p {
+    text-align: left;
+}
+
+.section-text ul {
+    list-style-type: circle; /* Remove default list markers */
+    list-style-position: inside; /* Ensure list items are aligned inside the ul */
+ }
+
+.section-text ul li {
+    padding-left: 2em; /* Add consistent padding */
+    text-indent: -2em; /* Adjust text indentation to align list markers */
+}
+
+.section-text ul li {
+    padding-left: 2em; /* Adjust padding for nested ordered lists */
+    text-indent: -2em; /* Adjust text indentation to align list markers */
+}
+
+.section-text ol li {
+    padding-left: 3em; /* Adjust padding for nested ordered lists */
+    text-indent: -2em; /* Adjust text indentation to align list markers */
 }
 
 /* Content wrapper */
@@ -75,8 +101,8 @@ p {
     width: 100%;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    min-height: 100vh; /* Ensure the wrapper takes the full viewport height */
-    flex: 1; /* This makes the content area take up the remaining space */
+    min-height: 100vh; /*Ensure the wrapper takes the full viewport height */
+    flex: 0.5; /* This makes the content area take up the remaining space */
 }
 
 .section-title {
@@ -99,6 +125,10 @@ p {
     flex-wrap: nowrap;
 }
 
+#home-content, #travel-content {
+    flex-direction: column;
+}
+
 .section-image, .section-text {
     flex: 1;
     display: flex;
@@ -110,10 +140,6 @@ p {
     flex-direction: column;
     flex-wrap: nowrap;
     box-sizing: border-box;
-}
-
-.section-text p {
-    margin-bottom: 1.5em;
 }
 
 .section-text {
