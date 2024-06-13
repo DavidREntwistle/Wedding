@@ -1,0 +1,71 @@
+/* rsvp.css */
+
+/* Basic styling for the form container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style for form groups (labels + inputs) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for radio buttons */
+.radio-group {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+    /* Optional: Adjust width or padding to match your design */
+}
+
+.radio-group label {
+    margin-right: 20px; /* Adjust spacing between label and radio button */
+}
+
+/* Style for submit button */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Style for privacy notice */
+.privacy-notice {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 14px;
+}
