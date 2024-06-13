@@ -32,7 +32,7 @@ function submitForm(event) {
 
     // Change submit button text to "Submitting..."
     const submitButton = document.querySelector('button[type="submit"]');
-    submitButton.textContent = 'Sending...';
+    submitButton.textContent = 'Submitting...';
 
     fetch('https://script.google.com/macros/s/AKfycbxq3p_MdHOcKWq0pbJ_Z4M548gptL8h4CgFp2YyzbmcvyYeXuQ_XWasSv0M5pPeTvP8/exec', {
         method: 'POST',
@@ -52,7 +52,7 @@ function submitForm(event) {
     })
     .finally(() => {
         // Reset submit button text after submission is completed
-        submitButton.textContent = 'Submit';
+        submitButton.textContent = 'Submitted!';
     });
 }
 

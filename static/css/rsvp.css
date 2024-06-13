@@ -1,5 +1,4 @@
 /* rsvp.css */
-
 /* Basic styling for the form container */
 .container {
     max-width: 600px;
@@ -22,12 +21,29 @@
 }
 
 .form-group input[type="text"],
-.form-group input[type="email"] {
+.form-group input[type="email"],
+/* .form-group input[type="radio"], */
+.form-group button[type="submit"] {
     width: 100%;
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Style for the flex container and its children */
+.form-group-flex {
+    display: flex;
+}
+
+.form-group-half {
+    flex: 1; /* Each half takes up equal space */
+    margin-right: 10px; /* Adjust spacing between halves */
+}
+
+.form-group-half:last-child {
+    margin-right: 0; /* Remove right margin from the last half */
 }
 
 /* Style for radio buttons */
