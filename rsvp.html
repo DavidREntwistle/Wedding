@@ -65,25 +65,25 @@
         </div>    
         <form id="rsvp-form" onsubmit="return validateForm()">
             <div class="form-group">
-                <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="First Name" required>
+                <label for="first-name">First Name: *</label>
+                <input type="text" id="first-name" name="First Name" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="this.setCustomValidity('')">
             </div>
             <div class="form-group">
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="Last Name" required>
+                <label for="last-name">Last Name: *</label>
+                <input type="text" id="last-name" name="Last Name" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="this.setCustomValidity('')">
             </div>
             <div class="form-group">
                 <label for="email-address">Email Address:</label>
-                <input type="email" id="email-address" name="Email Address" required>
+                <input type="email" id="email-address" name="Email Address">
             </div>
             <div class="form-group">
                 <label for="contact-number">Contact Number:</label>
-                <input type="text" id="contact-number" name="Contact Number" required>
+                <input type="text" id="contact-number" name="Contact Number">
             </div>
             <div class="form-group">
-                <label>Can you attend?</label>
+                <label>Can you attend? *</label>
                 <div class="radio-group">
-                    <input type="radio" id="attend-yes" name="Attendance" value="Yes" required>
+                    <input type="radio" id="attend-yes" name="Attendance" value="Yes" required oninvalid="this.setCustomValidity('Please select an option')" oninput="this.setCustomValidity('')">
                     <label for="attend-yes">Yes</label>
                     <br>
                     <input type="radio" id="attend-no" name="Attendance" value="No" required>
@@ -92,7 +92,7 @@
             </div>
             <button type="submit">Submit</button>
         </form>
-        <!-- <p class="form-note"><i>* Required fields</i></p> -->
+        <p class="form-note"><i>* Required fields</i></p>
         <p class="privacy-notice"><i>By submitting this form, you consent to the use of your information solely for Shaina & David's Wedding RSVP and contact purposes. We respect your privacy and will not use your data for commercial purposes or share it with any third parties.</i></p>
     </div>    
     <footer id="copyright" class="copyright">

@@ -3,33 +3,21 @@
 function validateForm() {
     var firstName = document.getElementById("first-name").value.trim();
     var lastName = document.getElementById("last-name").value.trim();
-    var emailAddress = document.getElementById("email-address").value.trim();
-    var contactNumber = document.getElementById("contact-number").value.trim();
     var attendYes = document.getElementById("attend-yes").checked;
     var attendNo = document.getElementById("attend-no").checked;
 
     if (firstName === "") {
-        alert("Please enter your First Name.");
+        alert("Please enter your first name");
         return false;
     }
 
     if (lastName === "") {
-        alert("Please enter your Last Name.");
-        return false;
-    }
-
-    if (emailAddress === "") {
-        alert("Please enter your Email Address.");
-        return false;
-    }
-
-    if (contactNumber === "") {
-        alert("Please enter your Contact Number.");
+        alert("Please enter your last name");
         return false;
     }
 
     if (!attendYes && !attendNo) {
-        alert("Please select if you can attend.");
+        alert("Please select an option");
         return false;
     }
 
