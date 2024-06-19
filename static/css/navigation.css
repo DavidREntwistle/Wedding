@@ -37,10 +37,19 @@
     z-index: 1000;
 }
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
 
 .copyright p {
     line-height: normal;
-    height: 70px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -74,7 +83,6 @@
     margin: 0;
     display: flex;
     justify-content: space-evenly;
-    height: 70px;
     align-items: center;
     font-size: 1.25em;
 }
@@ -170,14 +178,21 @@ html.overlay-active {
     color: #fff;
 }
 
-.nav-title,
-#nav-timer,
-.burger-menu {
+#nav-timer {
     display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    gap: 2em;
 }
 
-.burger-menu {
-    height: 70px;
+.nav-title, .burger-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
 
 .burger-menu .burger-icon {
@@ -204,6 +219,11 @@ html.overlay-active {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+.nav-title h5 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
 /* Very small devices (phones, 374px and down) */
 @media only screen and (min-width: 1px) and (max-width: 374px) {
     .overlay .nav-links a {
@@ -218,33 +238,20 @@ html.overlay-active {
         display: none;
     }
     
-    .nav-title {
+    .nav-title, .burger-menu {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-        padding-top: 5px;
+        padding-block: 1em;
     }
 
     .nav-title h1 {
         font-size: 2em;
-        line-height: 0.5em;
+        padding-inline: 1em;
     }
 
     .nav-title h5 {
         font-size: 0.75em;
         margin-bottom: 0;
         letter-spacing: 0.1em;
-        font-style: italic;
-    }
-
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
     }
 
     #nav-timer {
@@ -274,13 +281,9 @@ html.overlay-active {
         display: none;
     }
 
-    .nav-title {
+    .nav-title, .burger-menu, #nav-timer {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-        padding-top: 5px;
+        padding-inline: 0.7em;
     }
 
     .nav-title h1 {
@@ -292,24 +295,10 @@ html.overlay-active {
         font-size: 0.75em;
         margin-bottom: 0;
         letter-spacing: 0.1em;
-        font-style: italic;
-    }
-
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
     }
 
     #nav-timer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        white-space: nowrap;
-        gap: 0.3em;
+        gap: 0.5em;
     }
 
     #overlay.active #overlay-links {
@@ -331,13 +320,9 @@ html.overlay-active {
         display: none;
     }
 
-    .nav-title {
+    .nav-title, .burger-menu, #nav-timer {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-        padding-top: 12px;
+        padding-inline: 3em;
     }
 
     .nav-title h1 {
@@ -346,27 +331,8 @@ html.overlay-active {
     }
 
     .nav-title h5 {
-        font-size: 1em;
         margin-bottom: 0;
         letter-spacing: 0.1em;
-        font-style: italic;
-    }
-
-    .burger-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-    }
-
-    #nav-timer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        white-space: nowrap;
-        gap: 2.5em;
     }
 
     #overlay.active #overlay-links {
