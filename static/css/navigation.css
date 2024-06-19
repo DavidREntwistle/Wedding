@@ -283,7 +283,7 @@ html.overlay-active {
 
     .nav-title, .burger-menu, #nav-timer {
         display: flex;
-        padding-inline: 0.7em;
+        padding-inline: 0.5em;
     }
 
     .nav-title h1 {
