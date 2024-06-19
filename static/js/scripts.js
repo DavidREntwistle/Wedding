@@ -10,38 +10,50 @@ const htmlSources = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Extract the current page from the URL and store it in the 'currentPage' variable
-    // For example, if the URL is 'http://example.com/about', 'currentPage' will be 'about'
     const currentPage = document.location.pathname.split('/').slice(1).pop() || document.location.pathname;
 
-    // Check for 'rsvp' or 'rsvp.html' in the URL
     if (currentPage === 'rsvp' || currentPage === 'rsvp.html') {
         scriptSources.push("static/js/rsvp.js");
     }
     
-    // Check for 'accommodation' or 'accommodation.html' in the URL
     if (currentPage === 'accommodation' || currentPage === 'accommodation.html') {
         scriptSources.push("static/js/table.js");
     }
 
-    // Ensure navigation bar script is loaded before countdown script
-    scriptSources.sort((a, b) => a === "static/js/navigation.js" ? -1 : 1);
-    scriptSources.forEach(loadScript);
+    // Load HTML first
     htmlSources.forEach(([url, elementId]) => loadHTML(url, elementId));
-    // console.log('DOM fully loaded and parsed');
+
+    // Load scripts sequentially
+    loadScriptsSequentially(scriptSources);
 });
 
 /**
- * Dynamically load a script file.
+ * Dynamically load a script file and return a promise.
  * @param {string} url - The URL to fetch the script from.
+ * @returns {Promise} - A promise that resolves when the script is loaded.
  */
 function loadScript(url) {
-    const script = document.createElement("script");
-    script.src = url;
-    script.defer = true;
-    // script.onload = () => console.log(`Loaded script: ${url}`);
-    script.onerror = () => console.error(`Failed to load script: ${url}`);
-    document.body.appendChild(script);
+    return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = url;
+        script.defer = true;
+        script.onload = () => resolve(`Loaded script: ${url}`);
+        script.onerror = () => reject(new Error(`Failed to load script: ${url}`));
+        document.body.appendChild(script);
+    });
+}
+
+/**
+ * Load scripts sequentially.
+ * @param {Array} scriptUrls - An array of script URLs to load.
+ */
+function loadScriptsSequentially(scriptUrls) {
+    scriptUrls.reduce((promise, scriptUrl) => {
+        return promise.then(() => loadScript(scriptUrl));
+    }, Promise.resolve())
+    .catch(error => {
+        console.error(error.message);
+    });
 }
 
 /**
@@ -61,7 +73,10 @@ function loadHTML(url, elementId) {
             const element = document.getElementById(elementId);
             if (element) {
                 element.innerHTML = data;
-                // console.log(`Loaded HTML into #${elementId}`);
+                // Load scripts only after HTML is loaded to ensure placeholder elements are available
+                if (elementId === "navbar-placeholder") {
+                    loadScriptsSequentially(scriptSources);
+                }
             } else {
                 console.error(`Element with ID ${elementId} not found`);
             }
