@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     loadScript("static/js/navigation.js");
     loadScript("static/js/countdown.js");
     loadScript("static/js/table.js");
-    loadScript("static/js/rsvp.js");
+    if (window.location.pathname === "/rsvp.html") {
+        loadScript("static/js/rsvp.js");
+    }
 
 // Function to load script dynamically
 function loadScript(url) {
