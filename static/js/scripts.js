@@ -11,7 +11,7 @@ const htmlSources = [
 
 document.addEventListener("DOMContentLoaded", () => {
     const currentPage = document.location.pathname.split('/').pop();
-    
+
     // Check for 'rsvp' or 'rsvp.html' in the URL
     if (currentPage === 'rsvp' || currentPage === 'rsvp.html') {
         scriptSources.push("static/js/rsvp.js");
@@ -22,9 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
         scriptSources.push("static/js/table.js");
     }
 
+    // Ensure navigation bar script is loaded before countdown script
+    scriptSources.sort((a, b) => a === "static/js/navigation.js" ? -1 : 1);
     scriptSources.forEach(loadScript);
     htmlSources.forEach(([url, elementId]) => loadHTML(url, elementId));
-
     // console.log('DOM fully loaded and parsed');
 });
 
