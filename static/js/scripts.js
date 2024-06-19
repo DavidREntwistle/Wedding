@@ -10,7 +10,9 @@ const htmlSources = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    const currentPage = document.location.pathname.split('/').pop();
+    // Extract the current page from the URL and store it in the 'currentPage' variable
+    // For example, if the URL is 'http://example.com/about', 'currentPage' will be 'about'
+    const currentPage = document.location.pathname.split('/').slice(1).pop() || document.location.pathname;
 
     // Check for 'rsvp' or 'rsvp.html' in the URL
     if (currentPage === 'rsvp' || currentPage === 'rsvp.html') {
