@@ -4,9 +4,17 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 40px 20px;
+    width: 100%;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    min-height: 100vh; /*Ensure the wrapper takes the full viewport height */
+    flex: 0.5; /* This makes the content area take up the remaining space */
 }
 
 /* Style for form groups (labels + inputs) */
@@ -28,7 +36,7 @@
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 0.7em;
     box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
@@ -62,21 +70,25 @@
 }
 
 /* Style for submit button */
-button[type="submit"] {
+button[type="submit"], .rsvp-btn {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: rgba(255, 194, 209);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.7em;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
-    background-color: #45a049;
+button[type="submit"]:hover, .rsvp-btn:hover {
+    background-color: rgba(245, 174, 189);
+}
+
+.rsvp-link {
+    text-decoration: none;
 }
 
 /* Style for privacy notice */
