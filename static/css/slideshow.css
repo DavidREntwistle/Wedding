@@ -1,0 +1,26 @@
+/* slideshow.css */
+#slideshow {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust maximum height as needed */
+    overflow: hidden; /* Hide overflow to prevent resizing */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.slides {
+    display: none;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.slides.active {
+    display: block;
+    opacity: 1; /* Show the active slide */
+}
+
+.slides.inactive {
+    opacity: 0; /* Hide inactive slides */
+}
