@@ -80,9 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
         scriptSources.push("static/js/table.js");
     }
 
-    if (['', '/', '/index.html'].includes(currentPage)) {
-        scriptSources.push("static/js/slideshow.js");
-    }
+    // if (['', '/', '/index.html'].includes(currentPage)) {
+    //     scriptSources.push("static/js/slideshow.js");
+    // }
 
     if (['/rsvp-submitted', '/rsvp-error'].includes(currentPage)) {
         // Ensure scripts related to form submission are not reloaded
