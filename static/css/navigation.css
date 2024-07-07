@@ -1,21 +1,21 @@
 /* navigation.css */
 /* Show the scrollbar but make the track behind the bar transparent */
 ::-webkit-scrollbar {
-    width: 10px; /* width of the entire scrollbar */
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent; /* color of the tracking area */
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .2); /* color of the scroll thumb */
-    border-radius: 10px; /* roundness of the scroll thumb */
-    border: 3px solid transparent; /* creates padding around scroll thumb */
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    border: 3px solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, .5); /* change color on hover */
+    background-color: rgba(0, 0, 0, .5);
 }
 
 /* Navigation bar */

@@ -70,30 +70,28 @@ sup {
     vertical-align: super;
 }
 
-/* General styling for all ul elements inside section-content */
-
 .section-text ol p {
     text-align: left;
 }
 
 .section-text ul {
-    list-style-type: circle; /* Remove default list markers */
-    list-style-position: inside; /* Ensure list items are aligned inside the ul */
+    list-style-type: circle;
+    list-style-position: inside;
  }
 
 .section-text ul li {
-    padding-left: 2em; /* Add consistent padding */
-    text-indent: -2em; /* Adjust text indentation to align list markers */
+    padding-left: 2em;
+    text-indent: -2em;
 }
 
 .section-text ul li {
-    padding-left: 2em; /* Adjust padding for nested ordered lists */
-    text-indent: -2em; /* Adjust text indentation to align list markers */
+    padding-left: 2em;
+    text-indent: -2em;
 }
 
 .section-text ol li {
-    padding-left: 3em; /* Adjust padding for nested ordered lists */
-    text-indent: -2em; /* Adjust text indentation to align list markers */
+    padding-left: 3em;
+    text-indent: -2em;
 }
 
 /* Content wrapper */
@@ -106,8 +104,8 @@ sup {
     width: 100%;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    min-height: 100vh; /*Ensure the wrapper takes the full viewport height */
-    flex: 0.5; /* This makes the content area take up the remaining space */
+    min-height: 100vh;
+    flex: 0.5;
 }
 
 .section-title {

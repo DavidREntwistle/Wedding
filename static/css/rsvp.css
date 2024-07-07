@@ -1,5 +1,5 @@
 /* rsvp.css */
-/* Basic styling for the form container */
+/* Form container */
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -13,8 +13,8 @@
     width: 100%;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    min-height: 100vh; /*Ensure the wrapper takes the full viewport height */
-    flex: 0.5; /* This makes the content area take up the remaining space */
+    min-height: 100vh;
+    flex: 0.5;
 }
 
 /* Style for form groups (labels + inputs) */
@@ -30,14 +30,13 @@
 
 .form-group input[type="text"],
 .form-group input[type="email"],
-/* .form-group input[type="radio"], */
 .form-group button[type="submit"] {
     width: 100%;
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 0.7em;
-    box-sizing: border-box; /* Ensure padding and border are included in width */
+    box-sizing: border-box;
 }
 
 /* Style for the flex container and its children */
@@ -46,27 +45,26 @@
 }
 
 .form-group-half {
-    flex: 1; /* Each half takes up equal space */
-    margin-right: 10px; /* Adjust spacing between halves */
+    flex: 1;
+    margin-right: 10px;
 }
 
 .form-group-half:last-child {
-    margin-right: 0; /* Remove right margin from the last half */
+    margin-right: 0;
 }
 
 /* Style for radio buttons */
 .radio-group {
-    display: flex; /* Use flexbox to align items */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    align-items: center;
 }
 
 .radio-group input[type="radio"] {
     margin-right: 10px;
-    /* Optional: Adjust width or padding to match your design */
 }
 
 .radio-group label {
-    margin-right: 20px; /* Adjust spacing between label and radio button */
+    margin-right: 20px;
 }
 
 /* Style for submit button */
