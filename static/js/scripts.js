@@ -6,29 +6,14 @@
  * @returns {Promise} A promise that resolves when all scripts have loaded.
  */
 function loadScriptsSequentially(scriptUrls) {
-    // Use reduce to create a promise chain.
     return scriptUrls.reduce((promise, scriptUrl) => {
-        // For each script URL in the array, create a new promise.
         return promise.then(() => {
             return new Promise((resolve, reject) => {
-                //console.log(`Loading script: ${scriptUrl}`);
-                // Create a new script element.
                 const script = document.createElement("script");
-                // Set the script source to the current URL.
-                script.src = scriptUrl;
-                // Set the script to defer loading, so it doesn't block rendering.
-                script.defer = true;
-                // When the script has loaded, resolve the promise.
-                script.onload = () => {
-                    //console.log(`Successfully loaded script: ${scriptUrl}`);
-                    resolve();
-                };
-                // If there is an error loading the script, reject the promise with an error.
-                script.onerror = () => {
-                    // console.error(`Failed to load script: ${scriptUrl}`);
-                    reject(new Error(`Failed to load script: ${scriptUrl}`));
-                };
-                // Append the script to the document body.
+                script.src = `${scriptUrl}?v=${new Date().getTime()}`; // Cache busting
+                script.async = true; // Load asynchronously
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error(`Failed to load script: ${scriptUrl}`));
                 document.body.appendChild(script);
             });
         });
