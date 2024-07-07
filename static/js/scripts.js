@@ -25,7 +25,7 @@ function loadScriptsSequentially(scriptUrls) {
                 };
                 // If there is an error loading the script, reject the promise with an error.
                 script.onerror = () => {
-                    console.error(`Failed to load script: ${scriptUrl}`);
+                    // console.error(`Failed to load script: ${scriptUrl}`);
                     reject(new Error(`Failed to load script: ${scriptUrl}`));
                 };
                 // Append the script to the document body.
@@ -77,41 +77,29 @@ function loadHTML(url, elementId) {
 
 // Called when the initial HTML document is fully loaded.
 document.addEventListener("DOMContentLoaded", () => {
-    //console.log("DOM fully loaded and parsed");
     // Get the current page URL
-    const currentPage = document.location.pathname.split('/').slice(1).pop() || document.location.pathname;
+    const currentPage = document.location.pathname; // Example: "/index.html"
 
     // Initialize the script sources and HTML sources arrays
     const scriptSources = ["static/js/navigation.js", "static/js/countdown.js"];
     const htmlSources = [["static/utilities/navbar.html", "navbar-placeholder"]];
-
-    // Check if the current page is the RSVP page or the RSVP page with .html extension
-    if (currentPage === 'rsvp' || currentPage === 'rsvp.html') {
-        // If it is, add the RSVP script source to the array
-        scriptSources.push("static/js/rsvp.js");
-    }
     
-    // Check if the current page is the Accommodation page or the Accommodation page with .html extension
-    if (currentPage === 'accommodation' || currentPage === 'accommodation.html') {
-        // If it is, add the table script source to the array
-        scriptSources.push("static/js/table.js");
-    }
-
-    // Check if the current page is the home page
-    if (currentPage === '/' || currentPage === 'index.html') {
-        // If it is, add the slideshow script source to the array
-        //console.log("Current page is home, loading slideshow.js");
-        const script = document.createElement('script');
-        script.src = 'static/js/slideshow.js';
-        script.async = true;
-        document.body.appendChild(script);
-    }
-
     // Load HTML first
     htmlSources.forEach(([url, elementId]) => loadHTML(url, elementId));
 
-    // Check if we're on the rsvp-submitted or rsvp-error page
-    if (currentPage === 'rsvp-submitted' || currentPage === 'rsvp-error') {
+    if (['/rsvp', '/rsvp.html'].includes(currentPage)) {
+        scriptSources.push("static/js/rsvp.js");
+    }
+    
+    if (['/accommodation', '/accommodation.html'].includes(currentPage)) {
+        scriptSources.push("static/js/table.js");
+    }
+
+    if (['', '/', '/index.html'].includes(currentPage)) {
+        scriptSources.push("static/js/slideshow.js");
+    }
+
+    if (['/rsvp-submitted', '/rsvp-error'].includes(currentPage)) {
         // Ensure scripts related to form submission are not reloaded
         const index = scriptSources.indexOf("static/js/rsvp.js");
         if (index !== -1) {
@@ -121,9 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load scripts sequentially
     loadScriptsSequentially(scriptSources)
-        .then(() => {
-            //console.log("All scripts loaded successfully");
-        })
         .catch(error => {
             console.error("Error loading scripts:", error);
         });

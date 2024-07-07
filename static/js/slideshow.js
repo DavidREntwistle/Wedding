@@ -57,7 +57,7 @@ class Slideshow {
     // Start the automatic slide show
     startAutoSlide() {
         //console.log("Starting automatic slide show...");
-        setInterval(() => this.showNextSlide(), 4000); // time in milliseconds
+        setInterval(() => this.showNextSlide(), 3500); // time in milliseconds
     }
 }
 
