@@ -13,7 +13,7 @@ if (!window.formSubmitted) {
         }
         window.formSubmitted = true;
 
-        console.log('Form submit button pressed');
+        //console.log('Form submit button pressed');
         event.preventDefault(); // Prevent default form submission
 
         // Get form data
@@ -24,18 +24,18 @@ if (!window.formSubmitted) {
         const submitButton = document.querySelector('button[type="submit"]');
         submitButton.textContent = 'Submitting...';
 
-        console.log('Sending request...');
+        //console.log('Sending request...');
         // Send form data to Google Apps Script
         fetch('https://script.google.com/macros/s/AKfycbxq3p_MdHOcKWq0pbJ_Z4M548gptL8h4CgFp2YyzbmcvyYeXuQ_XWasSv0M5pPeTvP8/exec', {
             method: 'POST',
             body: formData
         })
         .then(response => {
-            console.log('Response received.');
+            //console.log('Response received.');
             return response.json();
         })
         .then(data => {
-            console.log('Data received:', data);
+            //console.log('Data received:', data);
             // Redirect to success/error page based on response
             if (data.result === 'success') {
                 window.location.href = 'rsvp-submitted'; // Redirect to success page
