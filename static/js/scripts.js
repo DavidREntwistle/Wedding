@@ -101,7 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentPage === '/' || currentPage === 'index.html') {
         // If it is, add the slideshow script source to the array
         //console.log("Current page is home, loading slideshow.js");
-        scriptSources.push("static/js/slideshow.js");
+        const script = document.createElement('script');
+        script.src = 'static/js/slideshow.js';
+        script.async = true;
+        document.body.appendChild(script);
     }
 
     // Load HTML first
