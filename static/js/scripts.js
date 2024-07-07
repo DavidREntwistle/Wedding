@@ -11,7 +11,7 @@ function loadScriptsSequentially(scriptUrls) {
             return new Promise((resolve, reject) => {
                 const script = document.createElement("script");
                 script.src = `${scriptUrl}?v=${new Date().getTime()}`; // Cache busting
-                script.async = true; // Load asynchronously
+                script.defer = true;
                 script.onload = () => resolve();
                 script.onerror = () => reject(new Error(`Failed to load script: ${scriptUrl}`));
                 document.body.appendChild(script);
