@@ -70,12 +70,6 @@
     right: 0;
 }
 
-/* Display topbar and copyright section after the correct password is entered */
-.password-entered .nav-bar,
-.password-entered .copyright {
-    display: flex;
-}
-
 /* Styling for the navigation links */
 .nav-links {
     list-style: none;
@@ -176,6 +170,12 @@ html.overlay-active {
 
 .nav-title h1, h5 {
     color: #fff;
+}
+
+.nav-title a {
+    text-decoration: none;
+    line-height: 0.5em;
+    text-align: center;
 }
 
 #nav-timer {
