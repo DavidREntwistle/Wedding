@@ -6,7 +6,7 @@ document.getElementById('addToCalendar').addEventListener('click', function() {
       location: "Holy Cross Church, Summerhill, Tramore, Co. Waterford, Ireland",
       dateStart: '20250307T123000Z',
       dateEnd: '20250308T013000Z',
-      description: "Ceremony at Holy Cross Church, 12:30pm - https://maps.app.goo.gl/aV97s9SRs9iHYNnc7\nReception at Faithlegg House Hotel, 3:00pm - https://maps.app.goo.gl/JyhrPo79qtytHxfF8",
+      description: "Ceremony at Holy Cross Church, 12:30pm: https://maps.app.goo.gl/aV97s9SRs9iHYNnc7\n\nReception at Faithlegg House Hotel, 3:00pm: https://maps.app.goo.gl/JyhrPo79qtytHxfF8",
       url: "https://shaina-david.com/details"
     };
   
