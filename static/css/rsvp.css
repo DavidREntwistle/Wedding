@@ -69,23 +69,37 @@
 
 /* Style for submit button */
 button[type="submit"], .rsvp-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
     background-color: rgba(255, 194, 209);
+}
+
+button[type="submit"], .rsvp-btn, #addToCalendar {
+    display: block;
+    width: 8em;
+    padding: 10px;
     color: white;
     border: none;
     border-radius: 0.7em;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    text-align: center;
+    margin: 0 auto;
 }
 
 button[type="submit"]:hover, .rsvp-btn:hover {
     background-color: rgba(245, 174, 189);
 }
 
-.rsvp-link {
+
+#addToCalendar {
+    background-color: #95B589;
+}
+
+#addToCalendar:hover {
+    background-color: rgba(191, 211, 193, 0.9);
+}
+
+.rsvp-link, #addToCalendar {
     text-decoration: none;
 }
 
