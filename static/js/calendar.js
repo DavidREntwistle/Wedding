@@ -5,7 +5,7 @@ document.getElementById('addToCalendar').addEventListener('click', function() {
       name: "Shaina & David's Wedding",
       location: "Holy Cross Church, Summerhill, Tramore, Co. Waterford, Ireland",
       dateStart: '20250307T123000Z',
-      dateEnd: '20250307T153000Z',
+      dateEnd: '20250308T013000Z',
       description: "Ceremony at Holy Cross Church, 12:30pm. Reception at Faithlegg House Hotel, 3:00pm.",
       url: "https://shaina-david.com/details"
     };
@@ -22,14 +22,14 @@ function generateCalendarFile(event) {
     var calendarContent =
         'BEGIN:VCALENDAR\n' +
         'VERSION:2.0\n' +
-        'PRODID:-//Your Organization//Your Product//EN\n' +
+        'PRODID:-//Shaina & David\'s Wedding//Personal Webpage//EN\n' +
         'BEGIN:VEVENT\n' +
         'UID:' + generateUID() + '\n' +
         'DTSTAMP:' + getFormattedDate(new Date()) + '\n' +
-        'SUMMARY:' + event.name + '\n' +
-        'LOCATION:' + event.location + '\n' +
-        'DESCRIPTION:' + event.description + '\n' +
-        'URL;VALUE=URI:' + event.url + '\n' +
+        'SUMMARY:' + escapeICSString(event.name) + '\n' +
+        'LOCATION:' + escapeICSString(event.location) + '\n' +
+        'DESCRIPTION:' + escapeICSString(event.description) + '\n' +
+        'URL;VALUE=URI:' + escapeICSString(event.url) + '\n' +
         'DTSTART:' + event.dateStart + '\n' +
         'DTEND:' + event.dateEnd + '\n' +
         'END:VEVENT\n' +
@@ -40,12 +40,17 @@ function generateCalendarFile(event) {
 
 // Function to generate a unique identifier for the event
 function generateUID() {
-    return 'uid-' + Date.now() + '@yourdomain.com';
+    return 'uid-' + Date.now() + '@shaina-david.com';
 }
 
 // Function to get the current date in the required format (YYYYMMDDTHHmmssZ)
 function getFormattedDate(date) {
     return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+}
+
+// Function to escape special characters in ICS file fields
+function escapeICSString(string) {
+    return string.replace(/([\,;])/g, '\\$1').replace(/\n/g, '\\n');
 }
 
 // Function to trigger download of calendar file
