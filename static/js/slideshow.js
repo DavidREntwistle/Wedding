@@ -10,21 +10,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize the slideshow
         init() {
-            this.images.forEach((image, index) => {
-                this.createImageElement(image, index);
-            });
-
+            this.createImageElements();
+            this.preloadImage(this.currentSlide);
             this.showSlide(this.currentSlide);
             this.startAutoSlide();
         }
 
-        // Create an image element and add it to the slideshow container
-        createImageElement(image, index) {
-            const imgElement = document.createElement('img');
-            imgElement.src = image;
-            imgElement.classList.add('slides');
-            if (index === 0) imgElement.classList.add('active'); // Show the first image initially
-            this.container.appendChild(imgElement);
+        // Create image elements and add them to the slideshow container
+        createImageElements() {
+            this.images.forEach((image, index) => {
+                const imgElement = document.createElement('img');
+                imgElement.dataset.src = image;
+                imgElement.classList.add('slides');
+                if (index === 0) imgElement.classList.add('active'); // Show the first image initially
+                else imgElement.classList.add('inactive');
+                this.container.appendChild(imgElement);
+            });
+        }
+
+        // Preload image
+        preloadImage(index) {
+            const imgElement = this.container.querySelector(`img[data-src='${this.images[index]}']`);
+            if (imgElement && !imgElement.src) {
+                imgElement.src = this.images[index];
+            }
         }
 
         // Show a specific slide
@@ -41,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            this.preloadImage((index + 1) % this.images.length); // Preload next image
             this.currentSlide = index;
         }
 
