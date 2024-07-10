@@ -8,7 +8,7 @@ document.querySelector('#navbar-placeholder').outerHTML = `
             <li><a href="travel">Travel</a></li>
             <li><a href="accommodation">Accommodation</a></li>
             <li><a href="ceremony">Ceremony</a></li>
-            <li><a href="venue">Venue</a></li>
+            <li><a href="reception">Reception</a></li>
             <li><a href="things-to-do">Things to do</a></li>
             <li><a href="rsvp">RSVP</a></li>
         </ul>
@@ -21,7 +21,7 @@ document.querySelector('#navbar-placeholder').outerHTML = `
                     <li><a href="travel">Travel</a></li>
                     <li><a href="accommodation">Accommodation</a></li>
                     <li><a href="ceremony">Ceremony</a></li>
-                    <li><a href="venue">Venue</a></li>
+                    <li><a href="reception">Reception</a></li>
                     <li><a href="things-to-do">Things to do</a></li>
                     <li><a href="rsvp">RSVP</a></li>
             </ul>
