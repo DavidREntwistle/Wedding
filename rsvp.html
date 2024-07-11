@@ -47,18 +47,32 @@
                 <label for="contact-number">Contact Number *</label>
                 <input type="text" id="contact-number" name="Contact Number" required pattern="^\S.*$" oninvalid="this.setCustomValidity('Please enter a valid contact number')" oninput="this.setCustomValidity('')">
             </div>
-            <div class="form-group">
-                <label>Will you be attending? *</label>
-                <div class="radio-group">
-                    <input type="radio" id="attend-yes" name="Attendance" value="Yes" required oninvalid="this.setCustomValidity('Please select an option')" oninput="this.setCustomValidity('')">
-                    <label for="attend-yes">Yes</label>
-                    <input type="radio" id="attend-no" name="Attendance" value="No" oninput="document.getElementById('attend-yes').setCustomValidity('')">
-                    <label for="attend-no">No</label>
+            <div class="form-group form-group-flex">
+                <div class="form-group-half">
+                    <label>Will you be attending? *</label>
+                    <div class="radio-group">
+                        <input type="radio" id="attend-yes" name="Attendance" value="Yes" required oninvalid="this.setCustomValidity('Please select an option')" oninput="this.setCustomValidity('')">
+                        <label for="attend-yes">Yes</label>
+                        <input type="radio" id="attend-no" name="Attendance" value="No" oninput="document.getElementById('attend-yes').setCustomValidity('')">
+                        <label for="attend-no">No</label>
+                    </div>
+                </div>
+                <div class="form-group-half">
+                    <label for="total-guests">No. of Guests in your Party</label>
+                    <input type="number" id="total-guests" name="No. of Guests in your Party" min="0" max="10">
                 </div>
             </div>
             <div class="form-group">
                 <label for="extra-guests">Names of Guests in your Party</label>
                 <input type="text" id="extra-guests" name="Names of Guests in your Party">
+            </div>
+            <div class="form-group">
+                <label for="dietary-requirements-allergies">Dietary Requirements & Allergies</label>
+                <input type="text" id="dietary-requirements" name="Dietary Requirements & Allergies">
+            </div>
+            <div class="form-group">
+                <label for="questions">Do you have any questions?</label>
+                <input type="text" id="questions" name="Do you have any questions?">
             </div>
             <button type="submit">Submit</button>
         </form>
