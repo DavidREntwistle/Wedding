@@ -31,13 +31,34 @@
     margin-top: 25%;
 }
 
-/* Small devices (phones, 374px and down) */
-@media only screen and (min-width: 1px) and (max-width: 374px) {
+/* Very small devices (phones, 299px and down) */
+@media only screen and (min-width: 1px) and (max-width: 299px) {
     .days,
     .hours,
     .minutes,
     .seconds,
     .numbers,
+    .message {
+        display: none
+    }
+}
+
+/* Small mobile phones (portrait and landscape) */
+@media only screen and (min-width: 300px) and (max-width: 374px) {
+    .days,
+    .hours,
+    .minutes,
+    .seconds {
+        display: inline-block;
+        font-size: auto;
+        width: auto;
+        font-size: 0.5em;
+    }
+
+    .numbers {
+        font-size: 2.25em;
+    }
+    
     .message {
         display: none
     }
