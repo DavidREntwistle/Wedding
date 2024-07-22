@@ -24,13 +24,14 @@
         `;
 
         if (now >= weddingDate) {
-            timerElement.innerHTML = `<div class="message">Just Married!</div>`;
+            timerElement.innerHTML = `<div class="message" id="married-message">Just Married!</div>`;
         } else if (days === 0 && hours < 24) {
-            timerElement.innerHTML = `<div class="message">Today is the day!</div>
+            timerElement.innerHTML = `
             ${createCountdownElement('days', days)}
             ${createCountdownElement('hours', hours)}
             ${createCountdownElement('minutes', minutes)}
-            ${createCountdownElement('seconds', seconds)}`;
+            ${createCountdownElement('seconds', seconds)}
+            <div class="message" id="today-message">Today is the day!</div>`;
         } else {
             timerElement.innerHTML = `
             ${createCountdownElement('days', days)}
