@@ -311,12 +311,16 @@ th {
         padding: 2px 5px;
         white-space: wrap;
         text-align: center;
-        font-size: 0.8em;
+        font-size: 0.59em;
     }
 
     .section-image img, iframe {
         width: 100%;
         height: 100%;
+    }
+
+    .accommodation-table {
+        max-width: 100vw;
     }
 }
 
@@ -343,12 +347,16 @@ th {
         padding: 2px 5px;
         white-space: wrap;
         text-align: center;
-        font-size: 0.8em;
+        font-size: 0.64em;
     }
 
     .section-image img, iframe {
         width: 100%;
         height: 100%;
+    }
+
+    .accommodation-table {
+        max-width: 100vw;
     }
 }
 

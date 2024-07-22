@@ -271,7 +271,7 @@ html.overlay-active {
 /* Small mobile phones (portrait and landscape) */
 @media only screen and (min-width: 300px) and (max-width: 374px) {
     .overlay .nav-links a {
-        font-size: 0.9em;
+        font-size: 1.2em;
     }
 
     .nav-links li {
