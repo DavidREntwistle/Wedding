@@ -4,7 +4,7 @@
 (function() {
     const headerTimerId = "header-timer";
     const navTimerId = "nav-timer";
-    const weddingDate = new Date('March 7, 2025 13:00:00 GMT+0000');
+    const weddingDate = new Date('March 7, 2025 13:00:00 GMT+0100');
 
     function updateCountdown(elementId, weddingDate) {
         const now = Date.now();
